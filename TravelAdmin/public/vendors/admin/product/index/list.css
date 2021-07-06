@@ -1,0 +1,12 @@
+.product_image_150_100 {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+}
+.text {
+    display: block;
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
