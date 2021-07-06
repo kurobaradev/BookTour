@@ -42,9 +42,9 @@
                                 <img class="product_image_150_100" src="{{$tour->feature_image_path}}" alt="">
                             </td>
                             <td>
-                                <a href="" class="btn btn-primary">Sửa</a>
+                                <a href="{{route('tour.edit',['id'=>$tour->id])}}" class="btn btn-primary">Sửa</a>
                                 <a href=""
-                                data-url=""
+                                data-url="{{route('tour.delete',['id'=>$tour->id])}}"
                                 class="btn btn-danger action_delete">Xóa</a>
                             </td>
                         </tr>

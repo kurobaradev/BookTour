@@ -56,8 +56,6 @@ class AdminTourController extends Controller
                 $dataTourCreate['feature_image_name']=$dataUploadfeatureImage['file_name'];
                 $dataTourCreate['feature_image_path']=$dataUploadfeatureImage['file_path'];
             }
-            
-            
             // dd($dataTourCreate);
             $this->tour->create($dataTourCreate);
             DB::commit();
@@ -67,6 +65,56 @@ class AdminTourController extends Controller
             Log::error("message:".$exception->getMessage().'Line'.$exception->getLine());
         }
       
+    }
+
+    public function edit($id)
+    {
+       
+        $tour = $this->tour->find($id);
+        $htmlOption = $this->getCategoriesTour($tour->category_tour_id);
+        
+        return view('admin.pages.tour.edit', compact('htmlOption','tour'));
+    }
+    public function update(Request $request, $id)
+    {
+        try {
+            DB::beginTransaction();
+            $dataTourUpdate = [
+                'name'=>$request->name,
+                'price'=>$request->price,
+                'content'=>$request->content,
+                'category_tour_id'=>$request->category_tour_id,
+                'user_id'=>auth()->id(),   
+            ];
+            $dataUploadfeatureImage=$this->StorageImageUpload($request, 'feature_image_path','tours');
+            if (!empty($dataUploadfeatureImage)) {
+                $dataTourUpdate['feature_image_name']=$dataUploadfeatureImage['file_name'];
+                $dataTourUpdate['feature_image_path']=$dataUploadfeatureImage['file_path'];
+            }
+            
+            $this->tour->find($id)->update($dataTourUpdate);
+            $tour = $this->tour->find($id);
+            DB::commit();
+            return redirect(route('tour.index'));
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error("message:".$exception->getMessage().'Line'.$exception->getLine());
+        }
+    }
+    public function delete($id){
+        try {
+            $this->tour->find($id)->delete();
+            return response()->json([
+                'code'=> 200,
+                'message'=>'success'
+            ], 200);
+        }catch (\Exception $exception) {
+            Log::error("message:".$exception->getMessage().'Line'.$exception->getLine());
+            return response()->json([
+                'code'=> 500,
+                'message'=>'fail'
+            ], 500);
+        }
     }
   
     
