@@ -1,7 +1,7 @@
 <?php
 namespace App\Components;
 
-use App\Models\Category;
+use App\Models\CategoriesTour;
 
 class Secusive {
     private $data;

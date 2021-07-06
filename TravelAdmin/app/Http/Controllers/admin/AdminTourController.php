@@ -10,7 +10,6 @@ use App\Traits\StorageImageTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Storage;
 
 class AdminTourController extends Controller
 {
@@ -25,8 +24,8 @@ class AdminTourController extends Controller
     }
     public function index()
     {
-        // $tuors = $this->tour->all(); 
-        return view('admin.pages.tour.index');
+        $tours = $this->tour->all(); 
+        return view('admin.pages.tour.index', compact('tours'));
     }
 
     public function getCategoriesTour($parentId){
@@ -42,7 +41,7 @@ class AdminTourController extends Controller
     }
     public function store(Request $request)
     {
-        // $path = Storage::putFile('feature_image_path', $request->file('tour'));
+        // $path = $request->file('feature_image_path')->storeAs('tour');
         try {
             DB::beginTransaction();
             $dataTourCreate = [
@@ -57,10 +56,12 @@ class AdminTourController extends Controller
                 $dataTourCreate['feature_image_name']=$dataUploadfeatureImage['file_name'];
                 $dataTourCreate['feature_image_path']=$dataUploadfeatureImage['file_path'];
             }
-            dd($dataTourCreate);
-            // $tour = $this->tour->create($dataTourCreate);
+            
+            
+            // dd($dataTourCreate);
+            $this->tour->create($dataTourCreate);
             DB::commit();
-            return redirect(route('medicines.index'));
+            return redirect(route('tour.index'));
         } catch (\Exception $exception) {
             DB::rollBack();
             Log::error("message:".$exception->getMessage().'Line'.$exception->getLine());

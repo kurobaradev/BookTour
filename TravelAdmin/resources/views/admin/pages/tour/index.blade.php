@@ -8,6 +8,9 @@
 <script src="{{asset('vendors/action/delete.js')}}"></script>
 
 @endsection
+@section('css')
+<link href="{{asset('vendors/admin/product/index/list.css')}}" rel="stylesheet" />
+@endsection
 @section('content')
 <div class="container-fluid">
 
@@ -20,13 +23,24 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Tiên loại tour</th>
+                            <th>Tên tour</th>
+                            <th>Giá</th>
+                            <th>Nội dung</th>
+                            <th>Loại</th>
+                            <th>hình ảnh</th>
                             <th>Tác vụ</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($tours as $tour)
                         <tr>
-                            <td>name</td>
+                            <td>{{$tour->name}}</td>
+                            <td>{{$tour->price}}</td>
+                            <td>{{$tour->content}}</td>
+                            <td>Miền trung</td>
+                            <td>
+                                <img class="product_image_150_100" src="{{$tour->feature_image_path}}" alt="">
+                            </td>
                             <td>
                                 <a href="" class="btn btn-primary">Sửa</a>
                                 <a href=""
@@ -34,6 +48,7 @@
                                 class="btn btn-danger action_delete">Xóa</a>
                             </td>
                         </tr>
+                        @endforeach 
                         {{-- @foreach ($categoriestour as $categoriestour)
                         <tr>
                             <td>{{$categoriestour->name}}</td>

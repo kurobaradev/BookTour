@@ -13,7 +13,7 @@
     <!-- Page Heading -->
     @include('admin.partials.content-header',['name'=>'Quản lí tuor','key'=>'Thêm tour'])
     <!-- DataTales Example -->
-    <form action="{{route('tour.store')}}" method="POST">
+    <form action="{{route('tour.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
           <label >Tên tour</label>
@@ -61,4 +61,6 @@
 <script src="https://cdn.tiny.cloud/1/yoq2e98eie626pyeibu02i0ap1dn96a3xzcq356c01k1jyjr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   <script>tinymce.init({selector:'textarea'});</script>
 <script src="{{asset('vendors/admin/tour/add/add.js')}}"></script>
+{{-- <script>$('#textareaId_ifr').contents().find("html").html();</script> --}}
+
 @endsection
