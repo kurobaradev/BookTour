@@ -1,6 +1,6 @@
 @extends('admin.layouts.index')
 @section('title')
-<title>Quản lí tuor</title>
+<title>Quản lí tour</title>
 @endsection
 @section('js')
 
@@ -15,7 +15,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    @include('admin.partials.content-header',['name'=>'Quản lí tuor','key'=>'Danh sách'])
+    @include('admin.partials.content-header',['name'=>'Quản lí tour','key'=>'Danh sách'])
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -36,7 +36,7 @@
                         <tr>
                             <td>{{$tour->name}}</td>
                             <td>{{$tour->price}}</td>
-                            <td>{{$tour->content}}</td>
+                            <td><p class="abc">{{$tour->content}}</p></td>
                             <td>Miền trung</td>
                             <td>
                                 <img class="product_image_150_100" src="{{$tour->feature_image_path}}" alt="">

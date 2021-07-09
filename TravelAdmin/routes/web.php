@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\admin\AdminBlogController;
+use App\Http\Controllers\admin\AdminCarController;
 use App\Http\Controllers\admin\AdminCategoriesTourController;
+use App\Http\Controllers\admin\AdminCategoryBlogController;
+use App\Http\Controllers\admin\AdminCategoryCarController;
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\AdminTourController;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +36,47 @@ Route::prefix('/admin')->group(function () {
         Route::get('/delete/{id}', [ AdminTourController::class,'delete'])->name('tour.delete');
 
     });
+    Route::prefix('category-car')->group(function () {
+        Route::get('/', [ AdminCategoryCarController::class,'index'])->name('categorycar.index');
+        Route::get('/create', [ AdminCategoryCarController::class,'create'])->name('categorycar.create');
+        Route::post('/store', [ AdminCategoryCarController::class,'store'])->name('categorycar.store');
+        Route::get('/edit/{id}', [ AdminCategoryCarController::class,'edit'])->name('categorycar.edit');
+        Route::post('/update/{id}', [ AdminCategoryCarController::class,'update'])->name('categorycar.update');
+        Route::get('/delete/{id}', [ AdminCategoryCarController::class,'delete'])->name('categorycar.delete');
+
+    });
+    Route::prefix('car')->group(function () {
+        Route::get('/', [ AdminCarController::class,'index'])->name('car.index');
+        Route::get('/create', [ AdminCarController::class,'create'])->name('car.create');
+        Route::post('/store', [ AdminCarController::class,'store'])->name('car.store');
+        Route::get('/edit/{id}', [ AdminCarController::class,'edit'])->name('car.edit');
+        Route::post('/update/{id}', [ AdminCarController::class,'update'])->name('car.update');
+        Route::get('/delete/{id}', [ AdminCarController::class,'delete'])->name('car.delete');
+
+    });
+    Route::prefix('category-blog')->group(function () {
+        Route::get('/', [ AdminCategoryBlogController::class,'index'])->name('categoryblog.index');
+        Route::get('/create', [ AdminCategoryBlogController::class,'create'])->name('categoryblog.create');
+        Route::post('/store', [ AdminCategoryBlogController::class,'store'])->name('categoryblog.store');
+        Route::get('/edit/{id}', [ AdminCategoryBlogController::class,'edit'])->name('categoryblog.edit');
+        Route::post('/update/{id}', [ AdminCategoryBlogController::class,'update'])->name('categoryblog.update');
+        Route::get('/delete/{id}', [ AdminCategoryBlogController::class,'delete'])->name('categoryblog.delete');
+
+    });
+    Route::prefix('blog')->group(function () {
+        Route::get('/', [ AdminBlogController::class,'index'])->name('blog.index');
+        Route::get('/create', [ AdminBlogController::class,'create'])->name('blog.create');
+        Route::post('/store', [ AdminBlogController::class,'store'])->name('blog.store');
+        Route::get('/edit/{id}', [ AdminBlogController::class,'edit'])->name('blog.edit');
+        Route::post('/update/{id}', [ AdminBlogController::class,'update'])->name('blog.update');
+        Route::get('/delete/{id}', [ AdminBlogController::class,'delete'])->name('blog.delete');
+
+    });
+    
+
+
+
+
     Route::prefix('oders')->group(function () {
         Route::get('/', function () {      
             return 'List oders';

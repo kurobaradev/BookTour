@@ -1,13 +1,13 @@
 @extends('admin.layouts.index')
 @section('title')
-<title>Quản lí loại tuor</title>
+<title>Quản lí loại tour</title>
 @endsection
 
 @section('content')
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    @include('admin.partials.content-header',['name'=>'Quản lí loại tuor','key'=>'Sửa loại tour'])
+    @include('admin.partials.content-header',['name'=>'Quản lí loại tour','key'=>'Sửa loại tour'])
     <!-- DataTales Example -->
     <form action="{{route('categoriestour.update',['id'=> $categoriestour->id])}}" method="POST">
         @csrf
