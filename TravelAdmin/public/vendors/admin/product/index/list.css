@@ -3,10 +3,13 @@
     height: 100px;
     object-fit: cover;
 }
-.text {
+.abc {
     display: block;
-    width: 100px;
-    overflow: hidden;
+    width: 300px;
+    margin: 0 !important;
+    /* 
+    padding: 0;*/
+    overflow: hidden; 
     white-space: nowrap;
     text-overflow: ellipsis;
 }

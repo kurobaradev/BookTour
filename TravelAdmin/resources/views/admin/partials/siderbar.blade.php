@@ -70,8 +70,8 @@
         </a>
         <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#">Danh sách loại xe</a>
-                <a class="collapse-item" href="#">Thêm loại xe</a>
+                <a class="collapse-item" href="{{route('categorycar.index')}}">Danh sách loại xe</a>
+                <a class="collapse-item" href="{{route('categorycar.create')}}">Thêm loại xe</a>
             </div>
         </div>
     </li>
@@ -85,8 +85,8 @@
         </a>
         <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#">Danh sách xe</a>
-                <a class="collapse-item" href="#">Thêm xe</a>
+                <a class="collapse-item" href="{{route('car.index')}}">Danh sách xe</a>
+                <a class="collapse-item" href="{{route('car.create')}}">Thêm xe</a>
             </div>
         </div>
     </li>
@@ -100,8 +100,8 @@
         </a>
         <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#">Danh sách loại tin tức</a>
-                <a class="collapse-item" href="#">Thêm loại tin tức</a>
+                <a class="collapse-item" href="{{route('categoryblog.index')}}">Danh sách loại tin tức</a>
+                <a class="collapse-item" href="{{route('categoryblog.create')}}">Thêm loại tin tức</a>
             </div>
         </div>
     </li>
@@ -115,8 +115,8 @@
         </a>
         <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#">Danh sách tin tức</a>
-                <a class="collapse-item" href="#">Thêm tin tức</a>
+                <a class="collapse-item" href="{{route('blog.index')}}">Danh sách tin tức</a>
+                <a class="collapse-item" href="{{route('blog.create')}}">Thêm tin tức</a>
             </div>
         </div>
     </li>
