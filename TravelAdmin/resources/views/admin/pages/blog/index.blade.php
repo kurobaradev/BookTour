@@ -24,7 +24,7 @@
                     <thead>
                         <tr>
                             <th>Tiêu đề</th>
-                            <th>Nội dung</th>
+                            <th>Mô tả</th>
                             <th>Loại</th>
                             <th>hình ảnh</th>
                             <th>Tác vụ</th>
@@ -34,7 +34,7 @@
                         @foreach ($blogs as $blog)
                         <tr>
                             <td>{{$blog->title}}</td>
-                            <td><p class="abc">{{$blog->content}}</p></td>
+                            <td class="content"><div class="abc">{{$blog->description}}</div ></td>
                             <td>Miền trung</td>
                             <td>
                                 <img class="product_image_150_100" src="{{$blog->feature_image_path}}" alt="">

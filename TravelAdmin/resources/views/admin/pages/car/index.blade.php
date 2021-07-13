@@ -25,7 +25,7 @@
                         <tr>
                             <th>Tên xe</th>
                             <th>Giá</th>
-                            <th>Nội dung</th>
+                            <th>Mô tả</th>
                             <th>Loại</th>
                             <th>hình ảnh</th>
                             <th>Tác vụ</th>
@@ -36,7 +36,7 @@
                         <tr>
                             <td>{{$car->name}}</td>
                             <td>{{$car->price}}</td>
-                            <td><p class="abc">{{$car->content}}</p></td>
+                            <td class="content"><div class="abc">{{$car->description}}</div ></td>
                             <td>Miền trung</td>
                             <td>
                                 <img class="product_image_150_100" src="{{$car->feature_image_path}}" alt="">

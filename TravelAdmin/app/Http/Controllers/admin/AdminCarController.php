@@ -46,6 +46,7 @@ class AdminCarController extends Controller
             $dataCarCreate = [
                 'name'=>$request->name,
                 'price'=>$request->price,
+                'description'=>$request->description,
                 'content'=>$request->content,
                 'category_car_id'=>$request->category_car_id,
                 'status'=> 0,
@@ -82,6 +83,7 @@ class AdminCarController extends Controller
             $dataCarUpdate = [
                 'name'=>$request->name,
                 'price'=>$request->price,
+                'description'=>$request->description,
                 'content'=>$request->content,
                 'category_car_id'=>$request->category_car_id,
                 'status'=> 0,

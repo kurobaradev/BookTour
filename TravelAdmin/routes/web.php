@@ -6,12 +6,14 @@ use App\Http\Controllers\admin\AdminCategoriesTourController;
 use App\Http\Controllers\admin\AdminCategoryBlogController;
 use App\Http\Controllers\admin\AdminCategoryCarController;
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\AdminIntroduceController;
+use App\Http\Controllers\admin\AdminSliderController;
 use App\Http\Controllers\admin\AdminTourController;
 use Illuminate\Support\Facades\Route;
 
 use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.pages.trangchu');
 });
 Route::prefix('/admin')->group(function () {
 
@@ -72,89 +74,16 @@ Route::prefix('/admin')->group(function () {
         Route::get('/delete/{id}', [ AdminBlogController::class,'delete'])->name('blog.delete');
 
     });
-    
-
-
-
-
-    Route::prefix('oders')->group(function () {
-        Route::get('/', function () {      
-            return 'List oders';
-        });
-        Route::get('/create',  function () {      
-            return 'Create oder';
-        });
-        Route::get('/edit', function () {      
-            return 'edit oder';
-        });
+    Route::prefix('slider')->group(function () {
+        Route::get('/', [ AdminSliderController::class,'index'])->name('slider.index');
+        Route::post('/store', [ AdminSliderController::class,'store'])->name('slider.store');
+        Route::get('/delete/{id}', [ AdminSliderController::class,'delete'])->name('slider.delete');
 
     });
-    Route::prefix('categories-car')->group(function () {
-        Route::get('/', function () {      
-            return 'List categories car';
-        });
-        Route::get('/create',  function () {      
-            return 'Create categories car';
-        });
-        Route::get('/edit', function () {      
-            return 'edit categories car';
-        });
-
+    Route::prefix('introduce')->group(function () {
+        Route::get('/', [ AdminIntroduceController::class,'index'])->name('introduce.index');
+        Route::post('/update/{id}', [ AdminIntroduceController::class,'update'])->name('introduce.update');
     });
-    Route::prefix('cars')->group(function () {
-        Route::get('/', function () {      
-            return 'List cars';
-        });
-        Route::get('/create',  function () {      
-            return 'Create car';
-        });
-        Route::get('/edit', function () {      
-            return 'edit car';
-        });
-
-    });
-    Route::prefix('categories-news')->group(function () {
-        Route::get('/', function () {      
-            return 'List categories news';
-        });
-        Route::get('/create',  function () {      
-            return 'Create categories news';
-        });
-        Route::get('/edit', function () {      
-            return 'edit categories news';
-        });
-
-    });
-    Route::prefix('news')->group(function () {
-        Route::get('/', function () {      
-            return 'List news';
-        });
-        Route::get('/create',  function () {      
-            return 'Create news';
-        });
-        Route::get('/edit', function () {      
-            return 'edit news';
-        });
-
-    });
-
-    // Route::prefix('product')->group(function () {
-    //     Route::get('/', [ AdminProductController::class,'index'])->name('product.index');
-    //     Route::get('/create', [ AdminProductController::class,'create'])->name('product.create');
-    //     Route::post('/store', [ AdminProductController::class,'store'])->name('product.store');
-    //     Route::get('/edit/{id}', [ AdminProductController::class,'edit'])->name('product.edit');
-    //     Route::post('/update/{id}', [ AdminProductController::class,'update'])->name('product.update');
-    //     Route::get('/delete/{id}', [ AdminProductController::class,'delete'])->name('product.delete');
-    // });
-
-    // Route::prefix('slider')->group(function () {
-    //     Route::get('/', [ AdminSliderController::class,'index'])->name('slider.index');
-    //     Route::get('/create', [ AdminSliderController::class,'create'])->name('slider.create');
-    //     Route::post('/store', [ AdminSliderController::class,'store'])->name('slider.store');
-    //     Route::get('/edit/{id}', [ AdminSliderController::class,'edit'])->name('slider.edit');
-    //     Route::post('/update/{id}', [ AdminSliderController::class,'update'])->name('slider.update');
-    //     Route::get('/delete/{id}', [ AdminSliderController::class,'delete'])->name('slider.delete');
-    // });
     
   
 });

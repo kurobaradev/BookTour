@@ -31,6 +31,10 @@
           </select>
         </div>
         <div class="form-group">
+          <label >Mô tả</label>
+          <textarea name="description"  class="form-control" rows="5" cols="50"></textarea>
+        </div>
+        <div class="form-group">
           <label >Giá xe</label>
           <input  type="text" 
                   class="form-control"

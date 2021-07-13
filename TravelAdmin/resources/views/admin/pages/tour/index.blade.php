@@ -25,9 +25,10 @@
                         <tr>
                             <th>Tên tour</th>
                             <th>Giá</th>
-                            <th>Nội dung</th>
+                            <th>Mô tả</th>
                             <th>Loại</th>
-                            <th>hình ảnh</th>
+                            <th>Ngày khởi hành</th>
+                            <th>Thời gian tour</th>
                             <th>Tác vụ</th>
                         </tr>
                     </thead>
@@ -36,11 +37,13 @@
                         <tr>
                             <td>{{$tour->name}}</td>
                             <td>{{$tour->price}}</td>
-                            <td><p class="abc">{{$tour->content}}</p></td>
+                            <td class="content"><div class="abc"> <?php echo "$tour->description"?></div></td>
                             <td>Miền trung</td>
-                            <td>
-                                <img class="product_image_150_100" src="{{$tour->feature_image_path}}" alt="">
-                            </td>
+                            <td><?php               
+                                $t = $tour->departed;
+                                echo date('d-m-Y \L\ú\c H:i', strtotime($t))
+                                 ?></td>
+                            <td>{{$tour->duration}}</td>
                             <td>
                                 <a href="{{route('tour.edit',['id'=>$tour->id])}}" class="btn btn-primary">Sửa</a>
                                 <a href=""

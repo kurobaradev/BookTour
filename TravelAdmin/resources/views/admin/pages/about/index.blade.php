@@ -1,6 +1,6 @@
 @extends('admin.layouts.index')
 @section('title')
-<title>Quản lí tin tức</title>
+<title>Quản lí thông tin giới thiệu</title>
 @endsection
 @section('css')
 <link href="{{asset('vendors/select2/select2.min.css')}}" rel="stylesheet" />
@@ -10,44 +10,25 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    @include('admin.partials.content-header',['name'=>'Quản lí tin tức','key'=>'Thêm tin tức'])
+    @include('admin.partials.content-header',['name'=>'Quản lí thông tin giới thiệu','key'=>'Thêm thông tin giới thiệu'])
     <!-- DataTales Example -->
-    <form action="{{route('blog.store')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('introduce.update',['id'=>$introduce->id])}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-          <label >Tiêu đề</label>
+          <label >Tên công ty</label>
           <input  type="text" 
                   class="form-control"
-                  placeholder="Tiêu đề"
-                  name="title"
+                  placeholder="Tên công ty"
+                  name="name_company"
+                  value="{{$introduce->name_company}}"
                   >
         </div>
         <div class="form-group">
-          <label >Loại tin tức</label>
-          <select class="form-control" name="category_blog_id">
-            <option value="0"></option>
-            {!! $htmlOption !!}
-          </select>
-        </div>
-        <div class="form-group">
-          <label >Mô tả</label>
-          <textarea name="description"  class="form-control" rows="5" cols="50"></textarea>
-        </div>
-        <div class="form-group">
-          <label >Hình ảnh</label>
-          <input  type="file" 
-            class="form-control-file"
-            name="feature_image_path"
-            >
-        </div>
-        {{-- <div class="form-group">
-          <label >Nhập tag cho tour</label>
-          <select  name="tags[]" class="form-control tag_select_choose" multiple="multiple">
-          </select>
-        </div> --}}
-        <textarea name="content" id="editor1" rows="10" cols="80"></textarea>
+            <label >Nội dung</label>
+                    <textarea name="content" id="editor1" rows="20" cols="80">{{$introduce->content}}</textarea>
+          </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Lưu thông tin</button>
       </form>
 
 </div>
