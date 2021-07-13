@@ -41,14 +41,15 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('vendors/use/css/carousel.css') }}" rel="stylesheet">
     <link href="{{ asset('vendors/use/css/blog.css') }}" rel="stylesheet">
+    
   </head>
-  <body>
+  <body >
     
 <header style="background: #1B4A7A;">
     @include('user.partials.header')
 </header>
 
-<main>
+<main >
     @yield('content')
   <!-- FOOTER -->
   @include('user.partials.footer')

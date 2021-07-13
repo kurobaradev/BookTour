@@ -56,35 +56,12 @@
 
   <div class="container marketing">
 
-    <!-- Three columns of text below the carousel -->
-    <div class="row ">
-      <div class="col-lg-4">
-        <i class="fab fa-7x fa-salesforce text-warning" ></i>
-        <h2 class="text-dark">RẺ HƠN GIÁ RẺ NHẤT, NGẠI GÌ KHÔNG ĐẶT?</h2>
-        <p class="text-dark">Ở đâu giá rẻ hơn, thông báo ngay với Vntrip.vn để được mua giá rẻ hơn giá rẻ nhất</p>
-        <p class="text-dark"><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <i class="fab fa-7x fa-cc-amazon-pay text-warning"></i>
-        <h2 class="text-dark">THANH TOÁN LINH HOẠT AN TOÀN</h2>
-        <p class="text-dark">Chấp nhận mọi hình thức thanh toán, không cần thẻ tín dụng. Bảo mật thông tin tuyệt đối.</p>
-        <p class="text-dark"><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-       <i class="fas fa-7x fa-phone-square-alt text-warning"></i>
-        <h2 class="text-dark">HỖ TRỢ 24/7</h2>
-        <p class="text-dark">Gọi ngay 0963 266 688 kể cả 2h sáng để được hỗ trợ</p>
-        <p class="text-dark"><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-
-
     <!-- START THE FEATURETTES -->
 
     <div class="row g-5">
       <div class="col-md-8">
         <h3 class="pb-4 mb-4 fst-italic border-bottom text-warning">
-          Tour nổi bật
+          Kết quả tìm kiếm
         </h3>
 
         <div class="card mb-3" style="max-width: 100%;">

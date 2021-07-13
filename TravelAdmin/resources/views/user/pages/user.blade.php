@@ -1,6 +1,6 @@
 @extends('user.layouts.index')
 @section('content')
-<div class="row" style="margin-top: 100px;">
+<div class="row" style="margin-top: 30px; height: 450px;">
   <div class="col-4" style=" width: 200px;">
     <div class="list-group" id="list-tab" role="tablist">
       <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">Thông tin cá nhân</a>
@@ -37,6 +37,9 @@
 		  </div>
       </div>
       <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+	  	<h3 class="pb-4 mb-4 fst-italic border-bottom">
+		    Chỉnh sữa thông tin cá nhân
+		</h3>
       	<form class="row g-3">
 				  <div class="col-md-6">
 				    <label class="form-label">Họ và tên: </label>
@@ -65,6 +68,9 @@
 				</form>
       </div>
       <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+	  	<h3 class="pb-4 mb-4 fst-italic border-bottom">
+		    Lịch sử đặt tour
+		</h3>
       		<table class="table">
 					  <thead>
 					    <tr>
@@ -96,6 +102,9 @@
 					</table>
       </div>
       <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+	  	<h3 class="pb-4 mb-4 fst-italic border-bottom">
+		    Tour đang đợi
+		</h3>
       	<table class="table">
 				  <thead>
 				    <tr>

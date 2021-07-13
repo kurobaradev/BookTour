@@ -13,9 +13,6 @@
             <a class="nav-link text-white" href="#"><i class="fas fa-plane-departure"></i> Tour</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#"><i class="fas fa-plane-departure"></i> Tour</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link text-white" href="#"><i class="fas fa-motorcycle"></i> Phương tiện</a>
           </li>
           <li class="nav-item">
