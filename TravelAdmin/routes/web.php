@@ -12,9 +12,9 @@ use App\Http\Controllers\admin\AdminTourController;
 use Illuminate\Support\Facades\Route;
 
 use Illuminate\Support\Facades\Auth;
-Route::get('/', function () {
-    return view('user.pages.trangchu');
-});
+Route::get('/', function () {return view('user.pages.trangchu');});
+Route::get('/user', function () {return view('user.pages.user');});
+
 Route::prefix('/admin')->group(function () {
 
     Route::get('/', [ AdminController::class,'loginAdmin']);
