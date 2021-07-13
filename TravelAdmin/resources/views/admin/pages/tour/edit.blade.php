@@ -25,6 +25,10 @@
                   >
         </div>
         <div class="form-group">
+          <label >Mô tả</label>
+          <textarea name="description"  class="form-control" rows="5" cols="50">{{$tour->description}}</textarea>
+        </div>
+        <div class="form-group">
           <label >Loại tour</label>
           <select class="form-control" name="category_tour_id">
             <option value="{{$tour->category_tour_id}}"></option>
@@ -40,6 +44,20 @@
                   name="price"
                   >
         </div>
+        <div action="form-group" class="row">
+          <div class="col-6">
+            <label >Ngày khởi hành</label>
+            <input type="datetime-local"class="form-control" name="departed" value="<?php               
+            $t = $tour->departed;
+            echo date('Y-m-d\TH:i:s', strtotime($t))
+             ?>">
+          </div>
+          <div class="col-6">
+            <label >Số ngày</label>
+            <input type="number" class="form-control" name="duration" value="{{$tour->duration}}">
+          </div>
+        </div>
+        <br>
         <div class="form-group">
           <label >Hình ảnh</label>
           <input  type="file" 
@@ -69,6 +87,7 @@
 <script type="text/javascript" src="{{asset('vendors/ckeditor/ckeditor.js')}}"></script>
 <script>CKEDITOR.replace( 'editor1' );</script>
 {{-- <script>tinymce.init({selector:'textarea'});</script> --}}
+
 <script src="{{asset('vendors/ckfinder/ckfinder.js')}}"></script>
 <script>
   CKEDITOR.replace('editor', {

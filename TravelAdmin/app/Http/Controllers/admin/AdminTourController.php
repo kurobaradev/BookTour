@@ -48,6 +48,9 @@ class AdminTourController extends Controller
                 'name'=>$request->name,
                 'price'=>$request->price,
                 'content'=>$request->content,
+                'duration'=>$request->duration,
+                'departed'=>$request->departed,
+                'description'=>$request->description,
                 'category_tour_id'=>$request->category_tour_id,
                 'user_id'=>auth()->id(),   
             ];
@@ -83,6 +86,9 @@ class AdminTourController extends Controller
                 'name'=>$request->name,
                 'price'=>$request->price,
                 'content'=>$request->content,
+                'duration'=>$request->duration,
+                'departed'=>$request->departed,
+                'description'=>$request->description,
                 'category_tour_id'=>$request->category_tour_id,
                 'user_id'=>auth()->id(),   
             ];

@@ -46,6 +46,7 @@ class AdminBlogController extends Controller
             DB::beginTransaction();
             $dataBlogCreate = [
                 'title'=>$request->title,
+                'description'=>$request->description,
                 'content'=>$request->content,
                 'category_blog_id'=>$request->category_blog_id,
                 'status'=> 0,
@@ -81,6 +82,7 @@ class AdminBlogController extends Controller
             DB::beginTransaction();
             $dataBlogUpdate = [
                 'title'=>$request->title,
+                'description'=>$request->description,
                 'content'=>$request->content,
                 'category_blog_id'=>$request->category_blog_id,
                 'status'=> 0,

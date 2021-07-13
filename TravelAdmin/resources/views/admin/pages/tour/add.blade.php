@@ -24,6 +24,10 @@
                   >
         </div>
         <div class="form-group">
+          <label >Mô tả</label>
+          <textarea name="description"  class="form-control" rows="5" cols="50"></textarea>
+        </div>
+        <div class="form-group">
           <label >Loại tour</label>
           <select class="form-control" name="category_tour_id">
             <option value="0"></option>
@@ -38,6 +42,17 @@
                   name="price"
                   >
         </div>
+        <div action="form-group" class="row">
+          <div class="col-6">
+            <label >Ngày khởi hành</label>
+            <input type="datetime-local" class="form-control" name="departed">
+          </div>
+          <div class="col-6">
+            <label >Số ngày</label>
+            <input type="number" class="form-control" name="duration">
+          </div>
+        </div>
+        <br>
         <div class="form-group">
           <label >Hình ảnh</label>
           <input  type="file" 
@@ -50,7 +65,10 @@
           <select  name="tags[]" class="form-control tag_select_choose" multiple="multiple">
           </select>
         </div> --}}
-        <textarea name="content" id="editor1" rows="10" cols="80"></textarea>
+        <div class="form-group">
+          <label >Nội dung</label>
+            <textarea name="content" id="editor1" rows="10" cols="80"></textarea>
+        </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

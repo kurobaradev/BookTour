@@ -5,11 +5,10 @@
 }
 .abc {
     display: block;
-    width: 300px;
-    margin: 0 !important;
-    /* 
-    padding: 0;*/
-    overflow: hidden; 
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    white-space: nowrap; 
+  width: 300px;
+  height: 100px;
+  /* border: 1px solid #000000; */
+  overflow: hidden;
+  text-overflow: ellipsis; 
 }
