@@ -1,15 +1,41 @@
 @extends('user.layouts.index')
 @section('content')
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="border-radius: 50%; height: 10px; width: 10px;"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" style="border-radius: 50%; height: 10px; width: 10px;"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" style="border-radius: 50%; height: 10px; width: 10px;"></button>
+    </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="d-block w-100">
+        <div class="container" >
+          <div class="carousel-caption text-start">
+            <h1>Example headline.</h1>
+            <p>Some representative placeholder content for the first slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+          </div>
+        </div>
       </div>
       <div class="carousel-item">
         <img src="img/99-thuyen_hoa.jpg" class="d-block w-100">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Another example headline.</h1>
+            <p>Some representative placeholder content for the second slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+          </div>
+        </div>
       </div>
       <div class="carousel-item">
         <img src="img/1590739634.jpg" class="d-block w-100">
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>One more for good measure.</h1>
+            <p>Some representative placeholder content for the third slide of this carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+          </div>
+        </div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
@@ -29,35 +55,13 @@
   <!-- Wrap the rest of the page in another container to center all the content. -->
 
   <div class="container marketing">
-    <!-- Three columns of text below the carousel -->
-    <div class="row ">
-      <div class="col-lg-4">
-        <i class="fab fa-7x fa-salesforce text-warning" ></i>
-        <h2 class="text-dark">RẺ HƠN GIÁ RẺ NHẤT, NGẠI GÌ KHÔNG ĐẶT?</h2>
-        <p class="text-dark">Ở đâu giá rẻ hơn, thông báo ngay với Vntrip.vn để được mua giá rẻ hơn giá rẻ nhất</p>
-        <p class="text-dark"><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <i class="fab fa-7x fa-cc-amazon-pay text-warning"></i>
-        <h2 class="text-dark">THANH TOÁN LINH HOẠT AN TOÀN</h2>
-        <p class="text-dark">Chấp nhận mọi hình thức thanh toán, không cần thẻ tín dụng. Bảo mật thông tin tuyệt đối.</p>
-        <p class="text-dark"><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-       <i class="fas fa-7x fa-phone-square-alt text-warning"></i>
-        <h2 class="text-dark">HỖ TRỢ 24/7</h2>
-        <p class="text-dark">Gọi ngay 0963 266 688 kể cả 2h sáng để được hỗ trợ</p>
-        <p class="text-dark"><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-
 
     <!-- START THE FEATURETTES -->
 
     <div class="row g-5">
       <div class="col-md-8">
         <h3 class="pb-4 mb-4 fst-italic border-bottom text-warning">
-          Tour nổi bật
+          Kết quả tìm kiếm
         </h3>
 
         <div class="card mb-3" style="max-width: 100%;">
@@ -307,4 +311,3 @@
 
   </div><!-- /.container -->
 @endsection
-

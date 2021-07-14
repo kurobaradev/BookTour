@@ -1,79 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Trang chủ</title>
 
-    @yield('title')
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+    <!-- Bootstrap core CSS -->
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- fontawesome.com -->
+    <script src="https://kit.fontawesome.com/3d60f2faba.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('vendors/use/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- fontawesome.com -->
+    <script src="https://kit.fontawesome.com/3d60f2faba.js" crossorigin="anonymous"></script>
 
-    <!-- Custom fonts for this template-->
-    <link href="{{ asset('adminlte/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-    <link href="{{ asset('adminlte/css/sb-admin-2.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('adminlte/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
-        @yield('css')
-    <!-- Custom styles for this template-->
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
 
-</head>
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
 
-<body id="page-top">
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-
-        @include('admin.partials.siderbar')
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content">
-                <!-- header -->
-                @include('admin.partials.header')
-                <!-- End of header -->
-
-                <!-- Page Content -->
-                @yield('content')
-                <!-- end Page Content -->
-            </div>
-            <!-- End of Main Content -->
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('adminlte/vendor/jquery/jquery.min.js') }}"></script>
     
-    <script src="{{ asset('adminlte/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('vendors/use/css/carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendors/use/css/blog.css') }}" rel="stylesheet">
+    
+  </head>
+  <body >
+    
+<header style="background: #1B4A7A;">
+    @include('user.partials.header')
+</header>
 
-    <!-- Core plugin JavaScript-->
-    <script src="{{ asset('adminlte/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="{{ asset('adminlte/js/sb-admin-2.min.js') }}"></script>
-
-    <!-- Page level plugins -->
-    {{-- <script src="{{ asset('adminlte/vendor/chart.js/Chart.min.js') }}"></script> --}}
-
-    <!-- Page level custom scripts -->
-    {{-- <script src="{{ asset('adminlte/js/demo/chart-area-demo.js') }}"></script> --}}
-    {{-- <script src="{{ asset('adminlte/js/demo/chart-pie-demo.js') }}"></script> --}}
-     <!-- Page level plugins -->
-     <script src="{{ asset('adminlte/vendor/datatables/jquery.dataTables.min.js') }}"></script>
-     <script src="{{ asset('adminlte/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+<main >
+    @yield('content')
+  <!-- FOOTER -->
+  @include('user.partials.footer')
+</main>
  
-     <!-- Page level custom scripts -->
-     <script src="{{ asset('adminlte/js/demo/datatables-demo.js') }}"></script>
-     @yield('js')
-</body>
-
+  </body>
 </html>
