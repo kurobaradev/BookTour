@@ -333,4 +333,8 @@
     <!-- /END THE FEATURETTES -->
 
   </div><!-- /.container -->
+<<<<<<< MinhTrung-User
 @endsection
+=======
+@endsection
+>>>>>>> local
