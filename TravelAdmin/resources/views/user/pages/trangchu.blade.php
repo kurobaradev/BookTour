@@ -21,14 +21,33 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
-
-
+  
+  
   <!-- Marketing messaging and featurettes
   ================================================== -->
   <!-- Wrap the rest of the page in another container to center all the content. -->
 
   <div class="container marketing">
+
+  <!-- Search -->
+    <div class="container position-relative p-0" style="height: 300px; margin-top: -50px;">
+      <img src="{{ asset('vendors/use/img/thanhhuong.jpg') }}" alt="..." style="height: 100%; width: 100%;">
+      <div class="position-absolute top-50 start-50 translate-middle bg-dark" style="width: 100%; height: 100%; opacity: 0.5;">    </div>
+      <div class="position-absolute top-50 start-50 translate-middle text-white row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Địa điểm</label>
+          <input class="form-control">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Ngày khởi hành</label>
+          <input type="text" id="timeCheckIn" class="form-control" />
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-warning text-dark">Tìm kiếm</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Three columns of text below the carousel -->
     <div class="row ">
       <div class="col-lg-4">
@@ -50,7 +69,7 @@
         <p class="text-dark"><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
-
+    
 
     <!-- START THE FEATURETTES -->
 
@@ -59,7 +78,6 @@
         <h3 class="pb-4 mb-4 fst-italic border-bottom text-warning">
           Tour nổi bật
         </h3>
-
         <div class="card mb-3" style="max-width: 100%;">
           <div class="row g-0">
             <div class="col-md-6">
@@ -77,7 +95,6 @@
             </div>
           </div>
         </div>
-
         <div class="card mb-3" style="max-width: 100%;">
           <div class="row g-0">
             <div class="col-md-6">
@@ -176,129 +193,107 @@
       </div>
 
       <div class="col-md-4">
-        <div class="border border-warning p-1 border-2">
-          <h3 class="bg-warning text-dark p-1" style="width: 100%;">TÌM KIẾM</h3>
-          <h5 class="text-white mt-2">MÃ TOUR</h5>
-          <input class="form-control" placeholder="Nhập từ khóa">
-          <h5 class="text-white mt-2">GIÁ</h5>
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Tất cả</option>
-            <option value="1">Từ 0 đến 500k</option>
-            <option value="2">Từ 500k đến 1triệu</option>
-            <option value="3">Từ 1triệu đến 3triệu</option>
-          </select>
-          <h5 class="text-white mt-2">LOẠI TOUR</h5>
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Tất cả</option>
-            <option value="1">Loại 1</option>
-            <option value="2">Loại 2</option>
-            <option value="3">Loại 3</option>
-          </select>
-          <h5 class="text-white mt-2">NƠI KHỞI HÀNH</h5>
-          <input class="form-control" placeholder="Nhập từ khóa">
-          <h5 class="text-white mt-2">NGÀY ĐI</h5>
-          <input class="form-control" placeholder="Nhập ngày đi">
-          <button type="button" class="btn btn-outline-warning mt-2"><i class="fas fa-search"></i> <strong>Tìm kiếm</strong></button>
-        </div>
-        <div class="mt-5 row">
-          <h3 class="text-warning col-7">TIN TỨC</h3>
+        <div class="row">
+        <h3 class="pb-4 mb-4 fst-italic border-bottom text-warning">
+          Tin tức
+        </h3>
+          <div class="card mb-3 p-0 m-0" style="max-width: 100%   ;">
+            <div class="row g-0 col-12">
+              <div class="col-md-4">
+                <a href="#"><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="rounded-start p-0 m-0" style="width: 100%; height: 100%;" ></a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <a href="#" class="text-decoration-none text-dark"><h5 class="">Ngắm Loạt Thành Tích Đáng Ngưỡng Mộ Của An Na</h5></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3 p-0 m-0" style="max-width: 100%   ;">
+            <div class="row g-0 col-12">
+              <div class="col-md-4">
+                <a href="#"><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="rounded-start p-0 m-0" style="width: 100%; height: 100%;" ></a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <a href="#" class="text-decoration-none text-dark"><h5 class="card-title">Ngắm Loạt Thành Tích Đáng Ngưỡng Mộ Của An Na</h5></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3 p-0 m-0" style="max-width: 100%   ;">
+            <div class="row g-0 col-12">
+              <div class="col-md-4">
+                <a href="#"><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="rounded-start p-0 m-0" style="width: 100%; height: 100%;" ></a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <a href="#" class="text-decoration-none text-dark"><h5 class="card-title">Ngắm Loạt Thành Tích Đáng Ngưỡng Mộ Của An Na</h5></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3 p-0 m-0" style="max-width: 100%   ;">
+            <div class="row g-0 col-12">
+              <div class="col-md-4">
+                <a href="#"><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="rounded-start p-0 m-0" style="width: 100%; height: 100%;" ></a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <a href="#" class="text-decoration-none text-dark"><h5 class="card-title">Ngắm Loạt Thành Tích Đáng Ngưỡng Mộ Của An Na</h5></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3 p-0 m-0" style="max-width: 100%   ;">
+            <div class="row g-0 col-12">
+              <div class="col-md-4">
+                <a href="#"><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="rounded-start p-0 m-0" style="width: 100%; height: 100%;" ></a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <a href="#" class="text-decoration-none text-dark"><h5 class="card-title">Ngắm Loạt Thành Tích Đáng Ngưỡng Mộ Của An Na</h5></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3 p-0 m-0" style="max-width: 100%   ;">
+            <div class="row g-0 col-12">
+              <div class="col-md-4">
+                <a href="#"><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="rounded-start p-0 m-0" style="width: 100%; height: 100%;" ></a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <a href="#" class="text-decoration-none text-dark"><h5 class="card-title">Ngắm Loạt Thành Tích Đáng Ngưỡng Mộ Của An Na</h5></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3 p-0 m-0" style="max-width: 100%   ;">
+            <div class="row g-0 col-12">
+              <div class="col-md-4">
+                <a href="#"><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="rounded-start p-0 m-0" style="width: 100%; height: 100%;" ></a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <a href="#" class="text-decoration-none text-dark"><h5 class="card-title">Ngắm Loạt Thành Tích Đáng Ngưỡng Mộ Của An Na</h5></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3 p-0 m-0" style="max-width: 100%   ;">
+            <div class="row g-0 col-12">
+              <div class="col-md-4">
+                <a href="#"><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="rounded-start p-0 m-0" style="width: 100%; height: 100%;" ></a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <a href="#" class="text-decoration-none text-dark"><h5 class="card-title">Ngắm Loạt Thành Tích Đáng Ngưỡng Mộ Của An Na</h5></a>
+                </div>
+              </div>
+            </div>
+          </div>
           <a href="#" class="col-5 text-warning mt-2"> Xem thêm >>></a>
-          <div class="card mb-3 p-0 m-0" style="max-width: 100%   ;">
-            <div class="row g-0 col-12">
-              <div class="col-md-4">
-                <a href="#"><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="rounded-start p-0 m-0" style="width: 100%; height: 100%;" ></a>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <a href="#" class="text-decoration-none text-dark"><h5 class="card-title">Ngắm Loạt Thành Tích Đáng Ngưỡng Mộ Của An Na</h5></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-3 p-0 m-0" style="max-width: 100%   ;">
-            <div class="row g-0 col-12">
-              <div class="col-md-4">
-                <a href="#"><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="rounded-start p-0 m-0" style="width: 100%; height: 100%;" ></a>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <a href="#" class="text-decoration-none text-dark"><h5 class="card-title">Ngắm Loạt Thành Tích Đáng Ngưỡng Mộ Của An Na</h5></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-3 p-0 m-0" style="max-width: 100%   ;">
-            <div class="row g-0 col-12">
-              <div class="col-md-4">
-                <a href="#"><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="rounded-start p-0 m-0" style="width: 100%; height: 100%;" ></a>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <a href="#" class="text-decoration-none text-dark"><h5 class="card-title">Ngắm Loạt Thành Tích Đáng Ngưỡng Mộ Của An Na</h5></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-3 p-0 m-0" style="max-width: 100%   ;">
-            <div class="row g-0 col-12">
-              <div class="col-md-4">
-                <a href="#"><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="rounded-start p-0 m-0" style="width: 100%; height: 100%;" ></a>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <a href="#" class="text-decoration-none text-dark"><h5 class="card-title">Ngắm Loạt Thành Tích Đáng Ngưỡng Mộ Của An Na</h5></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-3 p-0 m-0" style="max-width: 100%   ;">
-            <div class="row g-0 col-12">
-              <div class="col-md-4">
-                <a href="#"><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="rounded-start p-0 m-0" style="width: 100%; height: 100%;" ></a>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <a href="#" class="text-decoration-none text-dark"><h5 class="card-title">Ngắm Loạt Thành Tích Đáng Ngưỡng Mộ Của An Na</h5></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-3 p-0 m-0" style="max-width: 100%   ;">
-            <div class="row g-0 col-12">
-              <div class="col-md-4">
-                <a href="#"><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="rounded-start p-0 m-0" style="width: 100%; height: 100%;" ></a>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <a href="#" class="text-decoration-none text-dark"><h5 class="card-title">Ngắm Loạt Thành Tích Đáng Ngưỡng Mộ Của An Na</h5></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-3 p-0 m-0" style="max-width: 100%   ;">
-            <div class="row g-0 col-12">
-              <div class="col-md-4">
-                <a href="#"><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="rounded-start p-0 m-0" style="width: 100%; height: 100%;" ></a>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <a href="#" class="text-decoration-none text-dark"><h5 class="card-title">Ngắm Loạt Thành Tích Đáng Ngưỡng Mộ Của An Na</h5></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-3 p-0 m-0" style="max-width: 100%   ;">
-            <div class="row g-0 col-12">
-              <div class="col-md-4">
-                <a href="#"><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="rounded-start p-0 m-0" style="width: 100%; height: 100%;" ></a>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <a href="#" class="text-decoration-none text-dark"><h5 class="card-title">Ngắm Loạt Thành Tích Đáng Ngưỡng Mộ Của An Na</h5></a>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -306,5 +301,38 @@
     <!-- /END THE FEATURETTES -->
 
   </div><!-- /.container -->
+
+  <script src="{{ asset('vendors/use/css/jquery.min.js') }}"></script>
+  <script src="{{ asset('vendors/use/css/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('vendors/use/css/bootstrap-datepicker.js') }}"></script>
+    <script>
+        $(function () {
+            'use strict';
+            var nowTemp = new Date();
+            var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+            var checkin = $('#timeCheckIn').datepicker({
+                onRender: function (date) {
+                    return date.valueOf() < now.valueOf() ? 'disabled' : '';
+                }
+            }).on('changeDate', function (ev) {
+                if (ev.date.valueOf() > checkout.date.valueOf()) {
+                    var newDate = new Date(ev.date)
+                    newDate.setDate(newDate.getDate() + 1);
+                    checkout.setValue(newDate);
+                }
+                checkin.hide();
+                $('#timeCheckOut')[0].focus();
+            }).data('datepicker');
+            var checkout = $('#timeCheckOut').datepicker({
+                onRender: function (date) {
+                    return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+                }
+            }).on('changeDate', function (ev) {
+                checkout.hide();
+            }).data('datepicker');
+        });
+    </script>
+
 @endsection
 

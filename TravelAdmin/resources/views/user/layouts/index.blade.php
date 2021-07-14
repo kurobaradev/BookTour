@@ -20,6 +20,8 @@
     <link href="{{ asset('vendors/use/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- fontawesome.com -->
     <script src="https://kit.fontawesome.com/3d60f2faba.js" crossorigin="anonymous"></script>
+    <!-- Date -->
+    <link href="{{ asset('vendors/use/css/datepicker.css') }}" rel="stylesheet" />
 
     <style>
       .bd-placeholder-img {
@@ -56,4 +58,8 @@
 </main>
  
   </body>
+
+      <!-- Date -->
+  
+
 </html>

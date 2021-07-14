@@ -19,8 +19,10 @@ Route::get('/detail-tour', function () {return view('user.pages.detail-tour');})
 Route::get('/search', function () {return view('user.pages.search');});
 Route::get('/news', function () {return view('user.pages.news');});
 Route::get('/detail-news', function () {return view('user.pages.detail-news');});
+Route::get('/cars', function () {return view('user.pages.cars');});
 Route::get('/pay', function () {return view('user.pages.pay');});
 Route::get('/book-tour', function () {return view('user.pages.book-tour');});
+Route::get('/introduce', function () {return view('user.pages.introduce');});
 
 Route::prefix('/admin')->group(function () {
 

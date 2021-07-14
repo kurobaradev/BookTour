@@ -10,10 +10,24 @@
             <a class="nav-link active text-white" aria-current="page" href="#"> <i class="fas fa-home"></i> Trang chủ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#"><i class="fas fa-plane-departure"></i> Tour</a>
+            <div class="dropdown">
+              <a class="nav-link text-white dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-plane-departure"></i> Tour</a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1" style="background: #1B4A7A;">
+                <li><a class="dropdown-item" href="#">Loại 1</a></li>
+                <li><a class="dropdown-item" href="#">Loại 1</a></li>
+                <li><a class="dropdown-item" href="#">Loại 1</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#"><i class="fas fa-motorcycle"></i> Phương tiện</a>
+            <div class="dropdown">
+              <a class="nav-link text-white dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-motorcycle"></i> Phương tiện</a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2" style="background: #1B4A7A;">
+                  <li><a class="dropdown-item" href="#">Loại xe 1</a></li>
+                  <li><a class="dropdown-item" href="#">Loại xe 1</a></li>
+                  <li><a class="dropdown-item" href="#">Loại xe 1</a></li>
+                </ul>
+                </div>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="#"><i class="fas fa-book"></i> Cẩm nang du lịch</a>
