@@ -2,8 +2,8 @@
 @section('content')
   <!-- /.container -->
 
-  <div class="container marketing mb-5 mt-5">
-    <h3 class="pb-4 mb-4 fst-italic border-bottom text-dark">
+  <div class="container marketing mb-5 mt-5 text-dark">
+    <h3 class="pb-4 mb-4 fst-italic border-bottom ">
       THÔNG TIN ĐẶT TOUR
     </h3>
     <form class="row g-3">
@@ -11,7 +11,23 @@
         <label class="form-label">Tour Du Lịch Đà Lạt 1 Ngày Giá Rẻ - Tour Tham Quan - Trải Nghiệm Sở Thú Zoodoo Đà Lạt</label>
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Mã tour:</label>
+        <label for="inputPassword4" class="form-label"><i class="fas fa-barcode"></i> <strong>Mã Tour:</strong></label>
+        <label class="form-label">T-2904202015442375</label>
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"><i class="fas fa-calendar-alt"></i> <strong>Ngày Đi:</strong></label>
+        <label class="form-label">T-2904202015442375</label>
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"><i class="fas fa-map-marker-alt"></i> <strong>Nơi Khởi Hành:</strong></label>
+        <label class="form-label">T-2904202015442375</label>
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"><i class="fas fa-money-bill-alt"></i> <strong>Giá:</strong></label>
+        <label class="form-label">T-2904202015442375</label>
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"><i class="fas fa-calendar-alt"></i> <strong> Số Ngày:</strong></label>
         <label class="form-label">T-2904202015442375</label>
       </div>
       <div class="col-md-3">

@@ -85,7 +85,8 @@
             </div>
             <div class="col-md-6">
               <div class="card-body text-dark book">
-                <h5 class="card-title"><a href="" class="text-decoration-none text-dark">Tour Du Lịch Đà Lạt 1 Ngày Giá Rẻ - Tour Tham Quan - Trải Nghiệm Sở Thú Zoodoo Đà Lạt</a></h5>                <p class="card-text m-0"><i class="fas fa-barcode"></i> <strong>Mã Tour:</strong> T-2904202015442375</p>
+                <h5 class="card-title"><a href="" class="text-decoration-none text-dark">Tour Du Lịch Đà Lạt 1 Ngày Giá Rẻ - Tour Tham Quan - Trải Nghiệm Sở Thú Zoodoo Đà Lạt</a></h5>                
+                <p class="card-text m-0"><i class="fas fa-barcode"></i> <strong>Mã Tour:</strong> T-2904202015442375</p>
                 <p class="card-text m-0"><i class="fas fa-calendar-alt"></i> <strong>Ngày Đi:</strong> Hằng Ngày</p>
                 <p class="card-text m-0"><i class="fas fa-map-marker-alt"></i> <strong>Nơi Khởi Hành:</strong> </p>
                 <p class="card-text m-0"><i class="fas fa-money-bill-alt"></i> <strong>Giá:</strong> Liên Hệ</p>

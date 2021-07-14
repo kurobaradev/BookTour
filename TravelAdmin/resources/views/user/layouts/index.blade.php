@@ -38,7 +38,18 @@
         }
       }
     </style>
+    <style type="text/css">
 
+    /* ============ desktop view ============ */
+    @media all and (min-width: 992px) {
+      .navbar .nav-item .dropdown-menu{ display: none; }
+      .navbar .nav-item:hover .nav-link{   }
+      .navbar .nav-item:hover .dropdown-menu{ display: block; }
+      .navbar .nav-item .dropdown-menu{ margin-top:0; }
+    }	
+    /* ============ desktop view .end// ============ */
+
+    </style>
     
     <!-- Custom styles for this template -->
     <link href="{{ asset('vendors/use/css/carousel.css') }}" rel="stylesheet">
