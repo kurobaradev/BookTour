@@ -1,4 +1,5 @@
 # Cài đặt
+# yêu cầu: PHP version >=7.4
 Bước 1: Mở Terminal và thực hiện clone dự án và vào thư mục dự án bằng câu lệnh sau:
 
     git clone https://github.com/kurobaradev/BookTour.git
