@@ -8,43 +8,18 @@
 
   <!-- -------------------------- -->
 
-  <div class="row g-3 mb-5" style="margin-left: 10px;">
-    <div class="col-6">
-      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden border border-3">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Tên xe</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+  <div class="row container" style="margin-top: 10px;">
+    @foreach ($cars as $item)
+    <div class="card p-0 m-2" style="width: 18rem;">
+      <img class="card-img-top m-0" src="{{$item->feature_image_path}}" alt="Card image cap" style="width: 100%; height:8rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{$item->name}}</h5>
+        <p class="card-text">{{$item->description}}</p>
+        <a href="{{route('chitietxe.index',['id'=>$item->id])}}" class="btn btn-primary">Xem chi tiết</a>
       </div>
-    </div>
-    <div class="col-6">
-      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden border border-3">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Tên xe</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
-      </div>
-    </div>
-    <div class="col-6">
-      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden border border-3">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Tên xe</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
-      </div>
-    </div>
-    <div class="col-6">
-      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden border border-3">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Tên xe</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
-      </div>
-    </div>
+    </div>   
+
+    @endforeach
     
   </div>
 @endsection
