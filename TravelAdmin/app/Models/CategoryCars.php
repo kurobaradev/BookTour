@@ -11,4 +11,8 @@ class CategoryCars extends Model
     use HasFactory;
     use SoftDeletes;
     protected $guarded=[];
+    public function CategoriesCarChildrent()
+    {
+        return $this->hasMany(CategoryCars::class,'parent_id');
+    }
 }
