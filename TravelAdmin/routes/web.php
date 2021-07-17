@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/user', function () {return view('user.pages.user');});
-Route::get('/search', function () {return view('user.pages.search');});
-Route::get('/cars', function () {return view('user.pages.cars');});
 Route::prefix('/')->group(function () {
     
     Route::get('/',  [ TrangChuController::class,'index'])->name('trangchu.index');  
@@ -30,6 +27,11 @@ Route::prefix('/')->group(function () {
     Route::post('/pay/payconfirm', [TourController::class,'payconfirm'])->name('payconfirm.index');
     Route::get('/news.html', [ TinTucController::class,'allnews'])->name('tintuc.index');
     Route::get('/introduce.html', [ TrangChuController::class,'about'])->name('gioithieu.index');  
+    Route::get('/user', [ TrangChuController::class,'user'])->name('thongtincanhan.index');  
+    Route::get('/cars', [ TrangChuController::class,'cars'])->name('xe.index');  
+    Route::get('/cars/{id}', [ TrangChuController::class,'detailcars'])->name('chitietxe.index');  
+    Route::get('/cars/{id}/{slug}.html', [TrangChuController::class,'categorycar'])->name('danhmucxe.index');
+    Route::get('/search', [ TrangChuController::class,'search'])->name('timkiem.index');  
 
 
 });
