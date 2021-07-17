@@ -35,7 +35,7 @@
                         <tr>
                             <td>{{$blog->title}}</td>
                             <td class="content"><div class="abc">{{$blog->description}}</div ></td>
-                            <td>Miền trung</td>
+                            <td>{{optional($blog->categoryblog)->name}}</td>
                             <td>
                                 <img class="product_image_150_100" src="{{$blog->feature_image_path}}" alt="">
                             </td>

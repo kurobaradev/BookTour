@@ -11,4 +11,8 @@ class Tour extends Model
     use HasFactory;
     use SoftDeletes;
     protected $guarded=[];
+    public function categorytour()
+    {
+        return $this->belongsTo(CategoriesTour::class,'category_tour_id');
+    }
 }

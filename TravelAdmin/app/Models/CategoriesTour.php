@@ -11,4 +11,13 @@ class CategoriesTour extends Model
     use HasFactory;
     use SoftDeletes;
     protected $guarded=[];
+    public function CategoriesTourChildrent()
+    {
+        return $this->hasMany(CategoriesTour::class,'parent_id');
+    }
+
+    public function tour()
+    {
+        return $this->belongsTo(Tour::class,'id');
+    }
 }

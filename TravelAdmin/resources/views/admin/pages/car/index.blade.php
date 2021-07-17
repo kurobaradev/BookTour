@@ -37,7 +37,7 @@
                             <td>{{$car->name}}</td>
                             <td>{{$car->price}}</td>
                             <td class="content"><div class="abc">{{$car->description}}</div ></td>
-                            <td>Miền trung</td>
+                            <td>{{optional($car->categorycar)->name}}</td>
                             <td>
                                 <img class="product_image_150_100" src="{{$car->feature_image_path}}" alt="">
                             </td>

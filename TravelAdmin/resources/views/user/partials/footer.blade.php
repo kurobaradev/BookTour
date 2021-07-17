@@ -1,10 +1,4 @@
-<footer class="py-4 bg-light mt-auto">
-    <div class="container-fluid">
-        <div class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">IT17A1.11</div>
-            <div>
-                <p href="#">Website Quản lí app tra cứu thuốc</p>
-            </div>
-        </div>
-    </div>
+<footer class="container">
+    <p class="float-end"><a href="#" class="text-dark">Back to top</a></p>
+    <p class="text-dark">2017–2021 Company, Inc. <a href="#" class="text-dark">Privacy</a> &middot; <a href="#" class="text-dark">Terms</a></p>
 </footer>

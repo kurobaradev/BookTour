@@ -38,7 +38,7 @@
                             <td>{{$tour->name}}</td>
                             <td>{{$tour->price}}</td>
                             <td class="content"><div class="abc"> <?php echo "$tour->description"?></div></td>
-                            <td>Miền trung</td>
+                            <td>{{optional($tour->categorytour)->name}}</td>
                             <td><?php               
                                 $t = $tour->departed;
                                 echo date('d-m-Y \L\ú\c H:i', strtotime($t))

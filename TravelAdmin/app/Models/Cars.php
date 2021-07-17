@@ -11,4 +11,8 @@ class Cars extends Model
     use HasFactory;
     use SoftDeletes;
     protected $guarded=[];
+    public function categorycar()
+    {
+        return $this->belongsTo(CategoryCars::class,'category_car_id');
+    }
 }

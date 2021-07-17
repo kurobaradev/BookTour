@@ -9,16 +9,36 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\AdminIntroduceController;
 use App\Http\Controllers\admin\AdminSliderController;
 use App\Http\Controllers\admin\AdminTourController;
+use App\Http\Controllers\User\TinTucController;
+use App\Http\Controllers\User\TourController;
+use App\Http\Controllers\User\TrangChuController;
 use Illuminate\Support\Facades\Route;
 
 use Illuminate\Support\Facades\Auth;
-Route::get('/', function () {
-    return view('user.pages.trangchu');
+
+Route::get('/user', function () {return view('user.pages.user');});
+Route::get('/search', function () {return view('user.pages.search');});
+Route::get('/cars', function () {return view('user.pages.cars');});
+Route::prefix('/')->group(function () {
+    
+    Route::get('/',  [ TrangChuController::class,'index'])->name('trangchu.index');  
+    Route::get('/chi-tiet-tin-tuc/{id}',  [ TinTucController::class,'index'])->name('chitiettintuc.index');
+    Route::get('/chi-tiet-tour/{id}', [TourController::class,'index'])->name('chitiettour.index');
+    Route::get('/tour/{id}/{slug}.html', [TourController::class,'categorytour'])->name('categorytour.index');
+    Route::get('/book-tour/{id}', [TourController::class,'booktour'])->name('booktour.index');
+    Route::post('/pay/add', [TourController::class,'payAdd'])->name('thanhtoan.index');
+    Route::post('/pay/payconfirm', [TourController::class,'payconfirm'])->name('payconfirm.index');
+    Route::get('/news.html', [ TinTucController::class,'allnews'])->name('tintuc.index');
+    Route::get('/introduce.html', [ TrangChuController::class,'about'])->name('gioithieu.index');  
+
+
 });
+
 Route::prefix('/admin')->group(function () {
 
     Route::get('/', [ AdminController::class,'loginAdmin']);
     Route::post('/', [ AdminController::class,'postloginAdmin']);
+    Route::get('/logout', [ AdminController::class,'logout'])->name('admin.logout');;
     Route::get('/dashboard', function () {return view('admin.dashboard');})->name('admin.dashboard');
     Route::prefix('categories-tour')->group(function () {
         Route::get('/', [ AdminCategoriesTourController::class,'index'])->name('categoriestour.index');
@@ -91,3 +111,4 @@ Route::prefix('/admin')->group(function () {
 
 Auth::routes();
 Auth::routes();
+// Auth::logoutOtherDevices();
