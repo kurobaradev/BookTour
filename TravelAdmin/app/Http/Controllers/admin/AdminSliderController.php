@@ -16,24 +16,23 @@ class AdminSliderController extends Controller
     public function __construct(Slider $slider)
     {
         $this->slider = $slider;
-
     }
     public function index()
     {
-        $slider = $this->slider->all(); 
-        $sliders = $this->slider->all(); 
+        $slider = $this->slider->all();
+        $sliders = $this->slider->all();
 
-        return view('admin.pages.slider.index',compact('slider','sliders'));
+        return view('admin.pages.slider.index', compact('slider', 'sliders'));
     }
     public function store(Request $request)
     {
         // $path = $request->file('image_path')->storeAs('tour');
         try {
             DB::beginTransaction();
-            $dataUploadfeatureImage=$this->StorageImageUpload($request, 'image_path','sliders');
+            $dataUploadfeatureImage = $this->StorageImageUpload($request, 'image_path', 'sliders');
             if (!empty($dataUploadfeatureImage)) {
-                $dataSliderCreate['image_name']=$dataUploadfeatureImage['file_name'];
-                $dataSliderCreate['image_path']=$dataUploadfeatureImage['file_path'];
+                $dataSliderCreate['image_name'] = $dataUploadfeatureImage['file_name'];
+                $dataSliderCreate['image_path'] = $dataUploadfeatureImage['file_path'];
             }
             // dd($dataSliderCreate);
             $this->slider->create($dataSliderCreate);
@@ -41,13 +40,12 @@ class AdminSliderController extends Controller
             return redirect(route('slider.index'));
         } catch (\Exception $exception) {
             DB::rollBack();
-            Log::error("message:".$exception->getMessage().'Line'.$exception->getLine());
+            Log::error("message:" . $exception->getMessage() . 'Line' . $exception->getLine());
         }
-      
     }
-    public function delete($id){
+    public function delete($id)
+    {
         $this->slider->find($id)->delete();
         return redirect()->route('slider.index');
-
     }
 }

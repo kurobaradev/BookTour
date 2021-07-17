@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\admin;
 
 use App\Components\Secusive;
@@ -13,15 +14,16 @@ class AdminCategoryCarController extends Controller
     private $categorycars;
     public function __construct(CategoryCars $categorycars)
     {
-        $this->categorycars= $categorycars;
+        $this->categorycars = $categorycars;
     }
     public function index()
     {
         $categorycars = $this->categorycars->all();
-        return view('admin.pages.categorycar.index',compact('categorycars'));
+        return view('admin.pages.categorycar.index', compact('categorycars'));
     }
 
-    public function getCategoryCar($parentId){
+    public function getCategoryCar($parentId)
+    {
         $data = $this->categorycars->all();
         $secusive = new Secusive($data);
         $htmlOption = $secusive->Secusive($parentId);
@@ -29,44 +31,48 @@ class AdminCategoryCarController extends Controller
     }
     public function create()
     {
-        $htmlOption = $this->getCategoryCar($parentId='');
+        $htmlOption = $this->getCategoryCar($parentId = '');
         return view('admin.pages.categorycar.add', compact('htmlOption'));
     }
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $this->categorycars->create([
-            'name'=> $request->name,
-            'parent_id' => $request -> parent_id,
-            'slug'=> Str::slug($request->name)
+            'name' => $request->name,
+            'parent_id' => $request->parent_id,
+            'slug' => Str::slug($request->name)
         ]);
         return redirect(route('categorycar.index'));
     }
-    public function edit($parent_id){
+    public function edit($parent_id)
+    {
         $categorycars = $this->categorycars->find($parent_id);
         $htmlOption = $this->getCategoryCar($categorycars->parent_id);
-        return view('admin.pages.categorycar.edit', compact('categorycars','htmlOption'));
+        return view('admin.pages.categorycar.edit', compact('categorycars', 'htmlOption'));
     }
-    public function update($id, Request $request){
+    public function update($id, Request $request)
+    {
         $this->categorycars->find($id)->update(
             [
-                'name'=> $request->name,
-                'parent_id' => $request -> parent_id,
-                'slug'=> Str::slug($request->name)
+                'name' => $request->name,
+                'parent_id' => $request->parent_id,
+                'slug' => Str::slug($request->name)
             ]
         );
         return redirect(route('categorycar.index'));
     }
-    public function delete($id){
+    public function delete($id)
+    {
         try {
             $this->categorycars->find($id)->delete();
             return response()->json([
-                'code'=> 200,
-                'message'=>'success'
+                'code' => 200,
+                'message' => 'success'
             ], 200);
-        }catch (\Exception $exception) {
-            Log::error("message:".$exception->getMessage().'Line'.$exception->getLine());
+        } catch (\Exception $exception) {
+            Log::error("message:" . $exception->getMessage() . 'Line' . $exception->getLine());
             return response()->json([
-                'code'=> 500,
-                'message'=>'fail'
+                'code' => 500,
+                'message' => 'fail'
             ], 500);
         }
     }

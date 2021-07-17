@@ -23,11 +23,9 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'hoan',
+            'name' => 'admin',
             'email' =>'admin@gmail.com',
-            'email_verified_at' => now(),
-            'password' => '$2y$10$8uP4dDwGuoevHW7RFs0sD.szzeK0gMam8gkDiTXI/6Zbs6bid9qDK', // 123456789
-            'remember_token' => Str::random(10),
+            'password' => bcrypt("123456789"), // 123456789,
         ];
     }
 

@@ -12,24 +12,24 @@ class AdminController extends Controller
     {
         // dd(bcrypt("123456789"));
         if (Auth::check()) {
-            return redirect(route('admin.dashboard'));   
+            return redirect(route('admin.dashboard'));
         }
         return view('admin.loginadmin');
     }
     function postloginAdmin(Request $request)
     {
-        $remember = $request->has('remember_me') ? true: false;
+        $remember = $request->has('remember_me') ? true : false;
         if (Auth::attempt([
             'email' => $request->email,
-            'password' => $request->password],$remember))
-        {
-            return redirect(route('admin.dashboard'));   
-
+            'password' => $request->password
+        ], $remember)) {
+            return redirect(route('admin.dashboard'));
         }
     }
 
-        public function logout(Request $request) {
-            Auth::logout();
-            return view('admin.loginadmin');
-          }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect(route('adminlogin.index'));
+    }
 }

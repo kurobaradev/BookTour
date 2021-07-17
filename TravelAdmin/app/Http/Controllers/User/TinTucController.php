@@ -15,15 +15,15 @@ class TinTucController extends Controller
         $blog = Blogs::find($id);
         $blogRamdom = Blogs::inRandomOrder()->get();
         $blogNew = Blogs::limit(3)->get();
-        $categoryCar = CategoryCars::where('parent_id',0)->take(3)->get();
-        $categoryTour = CategoriesTour::where('parent_id',0)->take(3)->get();
-        return view('user.pages.detail-news',compact('blog','categoryCar','categoryTour','blogRamdom','blogNew'));
+        $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
+        $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
+        return view('user.pages.detail-news', compact('blog', 'categoryCar', 'categoryTour', 'blogRamdom', 'blogNew'));
     }
     public function allnews()
     {
         $blog = Blogs::all();
-        $categoryCar = CategoryCars::where('parent_id',0)->take(3)->get();
-        $categoryTour = CategoriesTour::where('parent_id',0)->take(3)->get();
-        return view('user.pages.news',compact('blog','categoryCar','categoryTour'));
+        $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
+        $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
+        return view('user.pages.news', compact('blog', 'categoryCar', 'categoryTour'));
     }
 }
