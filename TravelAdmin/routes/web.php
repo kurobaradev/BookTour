@@ -22,23 +22,25 @@ Route::prefix('/')->group(function () {
     Route::get('/chi-tiet-tin-tuc/{id}',  [ TinTucController::class,'index'])->name('chitiettintuc.index');
     Route::get('/chi-tiet-tour/{id}', [TourController::class,'index'])->name('chitiettour.index');
     Route::get('/tour/{id}/{slug}.html', [TourController::class,'categorytour'])->name('categorytour.index');
+    Route::get('/tour', [TourController::class,'alltour'])->name('tatcatour.index');
     Route::get('/book-tour/{id}', [TourController::class,'booktour'])->name('booktour.index');
     Route::post('/pay/add', [TourController::class,'payAdd'])->name('thanhtoan.index');
     Route::post('/pay/payconfirm', [TourController::class,'payconfirm'])->name('payconfirm.index');
     Route::get('/news.html', [ TinTucController::class,'allnews'])->name('tintuc.index');
     Route::get('/introduce.html', [ TrangChuController::class,'about'])->name('gioithieu.index');  
-    Route::get('/user', [ TrangChuController::class,'user'])->name('thongtincanhan.index');  
     Route::get('/cars', [ TrangChuController::class,'cars'])->name('xe.index');  
     Route::get('/cars/{id}', [ TrangChuController::class,'detailcars'])->name('chitietxe.index');  
     Route::get('/cars/{id}/{slug}.html', [TrangChuController::class,'categorycar'])->name('danhmucxe.index');
+    // chua hoan thanh
     Route::get('/search', [ TrangChuController::class,'search'])->name('timkiem.index');  
+    Route::get('/user', [ TrangChuController::class,'user'])->name('thongtincanhan.index');  
 
 
 });
 
 Route::prefix('/admin')->group(function () {
 
-    Route::get('/', [ AdminController::class,'loginAdmin']);
+    Route::get('/', [ AdminController::class,'loginAdmin'])->name('adminlogin.index');
     Route::post('/', [ AdminController::class,'postloginAdmin']);
     Route::get('/logout', [ AdminController::class,'logout'])->name('admin.logout');;
     Route::get('/dashboard', function () {return view('admin.dashboard');})->name('admin.dashboard');
