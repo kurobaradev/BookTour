@@ -24,7 +24,8 @@ class AdminBlogController extends Controller
     }
     public function index()
     {
-        $blogs = $this->blogs->all(); 
+        $blogs = $this->blogs->all();
+        // $htmlOption = $this->getCategoryBlog($blogs->category_blog_id);
         return view('admin.pages.blog.index', compact('blogs'));
     }
 

@@ -10,42 +10,20 @@
 
   <div class="container-fluid">
     <div class="row row-cols-1 row-cols-md-2 g-4 text-dark">
+      @foreach ($blog as $item)
       <div class="col">
         <div class="card">
-          <a href=""><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="card-img-top" alt="..."></a>
+          <a href="{{route('chitiettintuc.index',['id'=>$item->id])}}">
+          <img src="{{$item->feature_image_path}}" class="card-img-top" alt="..."></a>
           <div class="card-body">
-            <h4 class="card-title"><a href="" class="text-decoration-none text-dark">	Lạc Lối Trong “Dream Garden” Tại Gia Nghĩa</a></h4>
-            <p class="card-text m-0">Không chỉ sở hữu nhan sắc xinh đẹp được ví như “hoa hậu nhí”, cô bạn Đặng An Na còn sở hữu thành tích học tập...</p>
+            <h4 class="card-title">{{$item->title}}	</h4>
+            <p class="card-text m-0">{{$item->description}}</p>
           </div>
+        </a>
         </div>
       </div>
-      <div class="col">
-        <div class="card">
-          <a href=""><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="card-img-top" alt="..."></a>
-          <div class="card-body">
-            <h4 class="card-title"><a href="" class="text-decoration-none text-dark">	Lạc Lối Trong “Dream Garden” Tại Gia Nghĩa</a></h4>
-            <p class="card-text m-0">Không chỉ sở hữu nhan sắc xinh đẹp được ví như “hoa hậu nhí”, cô bạn Đặng An Na còn sở hữu thành tích học tập...</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <a href=""><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="card-img-top" alt="..."></a>
-          <div class="card-body">
-            <h4 class="card-title"><a href="" class="text-decoration-none text-dark">	Lạc Lối Trong “Dream Garden” Tại Gia Nghĩa</a></h4>
-            <p class="card-text m-0">Không chỉ sở hữu nhan sắc xinh đẹp được ví như “hoa hậu nhí”, cô bạn Đặng An Na còn sở hữu thành tích học tập...</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <a href=""><img src="{{ asset('vendors/use/img/2-1543169855.jpg') }}" class="card-img-top" alt="..."></a>
-          <div class="card-body">
-            <h4 class="card-title"><a href="" class="text-decoration-none text-dark">	Lạc Lối Trong “Dream Garden” Tại Gia Nghĩa</a></h4>
-            <p class="card-text m-0">Không chỉ sở hữu nhan sắc xinh đẹp được ví như “hoa hậu nhí”, cô bạn Đặng An Na còn sở hữu thành tích học tập...</p>
-          </div>
-        </div>
-      </div>
+      @endforeach
+      
     </div>
   </div>
 @endsection

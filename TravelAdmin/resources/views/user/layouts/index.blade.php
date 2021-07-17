@@ -22,7 +22,7 @@
     <script src="https://kit.fontawesome.com/3d60f2faba.js" crossorigin="anonymous"></script>
     <!-- Date -->
     <link href="{{ asset('vendors/use/css/datepicker.css') }}" rel="stylesheet" />
-
+    @yield('css')
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;

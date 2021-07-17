@@ -7,30 +7,60 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link active text-white" aria-current="page" href="#"> <i class="fas fa-home"></i> Trang chủ</a>
+            <a class="nav-link active text-white" aria-current="page" href="{{route('trangchu.index')}}"> <i class="fas fa-home"></i> Trang chủ</a>
           </li>
           <li class="nav-item">
             <div class="dropdown">
               <a class="nav-link text-white dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-plane-departure"></i> Tour</a>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1" style="background: #1B4A7A;">
-                <li><a class="dropdown-item" href="#">Loại 1</a></li>
-                <li><a class="dropdown-item" href="#">Loại 1</a></li>
-                <li><a class="dropdown-item" href="#">Loại 1</a></li>
+              <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownMenuButton1" style="background: #ffffff;">
+                @foreach($categoryTour as $categoryTourParent)
+                <li><a class="dropdown-item" href="{{route('categorytour.index',['id'=>$categoryTourParent->id,'slug'=>$categoryTourParent->slug])}}"><Strong>{{$categoryTourParent->name}}</Strong></a>
+                  @if($categoryTourParent->CategoriesTourChildrent->count())
+                  <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    @foreach($categoryTourParent->CategoriesTourChildrent as $CategoriesTourChil)
+                    <li class="nav-item">                      
+                        <a class="dropdown-item" href="{{route('categorytour.index',['id'=>$CategoriesTourChil->id,'slug'=>$CategoriesTourChil->slug])}}">{{$CategoriesTourChil->name}}</a>                     
+                    </li>
+                    @endforeach
+                  </ul>
+                  @endif
+                </li>
+                @endforeach
               </ul>
             </div>
+            
+            {{-- <div class="dropdown">
+              <a class="nav-link text-white dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-plane-departure"></i> Tour</a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1" style="background: #1B4A7A;">
+                @foreach($categoryTour as $categoryTourParent)
+                  <li><a class="dropdown-item" href="#">{{$categoryTourParent->name}}</a>
+                    @if($categoryTourParent->CategoriesTourChildrent->count())
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1" style="background: #1B4A7A;">
+                      @foreach($categoryTourParent->CategoriesTourChildrent as $CategoriesTourChil)
+                        <li><a class="dropdown-item" href="#">aaa</a></li>
+                      @endforeach
+                    </ul> 
+                    @endif
+                  </li>
+                  @endforeach
+                </ul>
+            </div> --}}
           </li>
           <li class="nav-item">
             <div class="dropdown">
               <a class="nav-link text-white dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-motorcycle"></i> Phương tiện</a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2" style="background: #1B4A7A;">
-                  <li><a class="dropdown-item" href="#">Loại xe 1</a></li>
-                  <li><a class="dropdown-item" href="#">Loại xe 1</a></li>
-                  <li><a class="dropdown-item" href="#">Loại xe 1</a></li>
+                  @foreach($categoryCar as $categoryCarParent)
+                  <li><a class="dropdown-item" href="#">{{$categoryCarParent->name}}</a></li>
+                  @endforeach
                 </ul>
                 </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#"><i class="fas fa-book"></i> Cẩm nang du lịch</a>
+            <a class="nav-link text-white" href="{{route('tintuc.index')}}"><i class="fas fa-book"></i> Cẩm nang du lịch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{{route('gioithieu.index')}}"></i>Giới thiệu</a>
           </li>
         </ul>
 
