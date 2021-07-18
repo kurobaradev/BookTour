@@ -27,6 +27,7 @@
     <!-- Date -->
     <link href="{{ asset('vendors/use/css/datepicker.css') }}" rel="stylesheet" />
     @yield('css')
+    @yield('js')
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -46,6 +47,18 @@
         }
         .hoverimg:hover img{
             transform: scale(1.2);
+        }
+        .text-over2 h5 a{
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .text-over3 p a{
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
     </style>
     <style type="text/css">

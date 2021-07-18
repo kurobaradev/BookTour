@@ -70,4 +70,40 @@ class TrangChuController extends Controller
         $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
         return view('user.pages.user', compact('categoryCar', 'categoryTour', 'tour', 'user', 'tourwat', 'tourconfirm'));
     }
+    public function search()
+    {
+        $slider = Slider::latest()->get();
+        $tour = Tour::all();
+        $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
+        $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
+        return view('user.pages.search', compact('slider','categoryCar', 'categoryTour', 'tour'));
+    }
+    public function loginUser()
+    {
+        $tour = Tour::all();
+        $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
+        $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
+        return view('user.pages.loginUser', compact('categoryCar', 'categoryTour', 'tour'));
+    }
+    public function registrationUser()
+    {
+        $tour = Tour::all();
+        $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
+        $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
+        return view('user.pages.registrationUser', compact('categoryCar', 'categoryTour', 'tour'));
+    }
+    public function confirmEmail()
+    {
+        $tour = Tour::all();
+        $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
+        $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
+        return view('user.pages.confirmEmail', compact('categoryCar', 'categoryTour', 'tour'));
+    }
+    public function bookcar()
+    {
+        $tour = Tour::all();
+        $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
+        $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
+        return view('user.pages.bookcar', compact('categoryCar', 'categoryTour', 'tour'));
+    }
 }

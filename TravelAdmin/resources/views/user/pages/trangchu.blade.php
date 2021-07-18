@@ -22,11 +22,15 @@
       <div class="col-9 row g-3 text-dark">
         @foreach ($tours as $tour)
         <div class=" col-4">
-          <div class="card" style="width: 100%;">
+          <div class="card" style="width: 100%; height: 300px;">
             <a href="{{route('chitiettour.index',['id'=>$tour->id])}}" class="hoverimg"><img src="{{$tour->feature_image_path}}" class="card-img-top" alt="..." style="height:140px"></a>
             <div class="card-body">
-              <h5 class="card-title"><a href="{{route('chitiettour.index',['id'=>$tour->id])}}" class="text-decoration-none link-dark"><strong>{{$tour->name}}</strong></a></h5>
-              <p class="card-text p-0 m-0"><a href="{{route('chitiettour.index',['id'=>$tour->id])}}" class="text-decoration-none text-dark d-inline-block text-truncate" style="max-width: 100%;">{{$tour->description}}</a></p>
+              <div class="text-over2">
+                <h5 class="card-title "><a href="{{route('chitiettour.index',['id'=>$tour->id])}}" class="text-decoration-none link-dark "><strong>{{$tour->name}}</strong></a></h5>
+              </div>
+              <div class="text-over3">
+                <p class="card-text p-0 m-0"><a href="{{route('chitiettour.index',['id'=>$tour->id])}}" class="text-decoration-none text-dark" style="max-width: 100%;">{{$tour->description}}</a></p>
+              </div>
               <p class="card-text m-0 p-0"><a href="{{route('chitiettour.index',['id'=>$tour->id])}}" class="text-decoration-none text-dark"><i class="fas fa-money-bill-alt"></i><strong> Giá:</strong>{{$tour->price}} </a></p>
             </div>
           </div>
@@ -47,11 +51,15 @@
       <div class="col-9 row g-3 text-dark">
       @foreach ($car as $car)
         <div class=" col-4">
-          <div class="card" style="width: 100%;">
+          <div class="card" style="width: 100%; height: 300px;">
             <a href="{{route('chitietxe.index',['id'=>$car->id])}}" class="hoverimg"><img src="{{$car->feature_image_path}}" class="card-img-top" alt="..." style="height:140px"></a>
             <div class="card-body">
+              <div class="text-over2">
               <h5 class="card-title"><a href="{{route('chitietxe.index',['id'=>$car->id])}}" class="text-decoration-none link-dark"><strong>{{$car->name}}</strong></a></h5>
-              <p class="card-text p-0 m-0"><a href="{{route('chitietxe.index',['id'=>$car->id])}}" class="text-decoration-none text-dark d-inline-block text-truncate" style="max-width: 100%;">{{$car->description}}</a></p>
+              </div>
+              <div class="text-over3">
+              <p class="card-text p-0 m-0"><a href="{{route('chitietxe.index',['id'=>$car->id])}}" class="text-decoration-none text-dark" style="max-width: 100%;">{{$car->description}}</a></p>
+              </div>
               <p class="card-text m-0 p-0"><a href="{{route('chitietxe.index',['id'=>$car->id])}}" class="text-decoration-none text-dark"><i class="fas fa-money-bill-alt"></i><strong> Giá:</strong>{{$car->price}} </a></p>
             </div>
           </div>
@@ -67,12 +75,16 @@
         <p class="p-2 bd-highlight text-dark "><a href="" class="text-decoration-none">Xem thêm></a></p>
       </div>
       @foreach ($blogs as $blogs)
-      <div class=" col-4">
-        <div class="card" style="width: 100%;">
+      <div class=" col-3">
+        <div class="card" style="width: 100%; height: 300px;">
           <a href="{{route('chitiettintuc.index',['id'=>$blogs->id])}}" class="hoverimg"><img src="{{$blogs->feature_image_path}}" class="card-img-top" alt="..." style="height:140px"></a>
           <div class="card-body">
-            <h5 class="card-title"><a href="{{route('chitiettintuc.index',['id'=>$blogs->id])}}" class="text-decoration-none link-dark"><strong>{{$blogs->title}}</strong></a></h5>
-            <p class="card-text p-0 m-0"><a href="{{route('chitiettintuc.index',['id'=>$blogs->id])}}" class="text-decoration-none text-dark">{{$blogs->description}}</a></p>
+            <div class="text-over2">
+              <h5 class="card-title"><a href="{{route('chitiettintuc.index',['id'=>$blogs->id])}}" class="text-decoration-none link-dark"><strong>{{$blogs->title}}</strong></a></h5>
+            </div>
+            <div class="text-over3">
+              <p class="card-text p-0 m-0"><a href="{{route('chitiettintuc.index',['id'=>$blogs->id])}}" class="text-decoration-none text-dark">{{$blogs->description}}</a></p>
+            </div>
           </div>
         </div>
       </div>

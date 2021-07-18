@@ -73,14 +73,84 @@
             </div>
             <div class=" form-group col-12">
                 <label for="inputAddress" class="form-label">Dịch vụ thuê xe đi kèm</label>
-                <select class="form-control" name="price_car">
-                    <option value="0">Không thuê</option>
-                    @foreach ($car as $car)
-                        <option value="{{ $car->price }}">{{ $car->name }} | <i>Đơn giá {{ $car->price }}</i>
-                        </option>
+                <input class="form-check-input" type="checkbox" id="show" name="vehicle1" value="Bike">
+                <label class="form-check-label" for="flexCheckIndeterminate">Thuê xe đi kèm</label>
 
-                    @endforeach
-                </select>
+                <div class="menu" style="display: none;">
+                    <div>
+                        <!--dropdown list options-->
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option selected>Open this select menu</option>
+                            <option value="loaix1">Loại xe 1</option>
+                            <option value="loaix2">Loại xe 2</option>
+                            <option value="loaix3">Loại xe 3</option>
+
+                        </select>
+                    </div>
+                    <!--divs that hide and show-->
+
+                    <div class="loaix1 box">
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label">
+                            Default radio
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label">
+                            Default checked radio
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                        <label class="form-check-label">
+                            Default checked radio
+                        </label>
+                        </div>
+                    </div>
+                    <div class="loaix2 box">
+
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label">
+                            Default radio
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label">
+                            Default checked radio
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                        <label class="form-check-label">
+                            Default checked radio
+                        </label>
+                        </div>
+                    </div>
+                    <div class="loaix3 box">
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label">
+                            Default radio
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label">
+                            Default checked radio
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                        <label class="form-check-label">
+                            Default checked radio
+                        </label>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-lg btn-primary">Đặt tour</button>
@@ -90,4 +160,34 @@
 
         </form>
     </div>
+
+
+    
+@endsection
+@section('js')
+<script src=
+        "https://code.jquery.com/jquery-1.12.4.min.js">
+    </script>
+    <script>
+        // jQuery functions to hide and show the div
+        $(document).ready(function () {
+            $("select").change(function () {
+                $(this).find("option:selected")
+                       .each(function () {
+                    var optionValue = $(this).attr("value");
+                    if (optionValue) {
+                        $(".box").not("." + optionValue).hide();
+                        $("." + optionValue).show();
+                    } else {
+                        $(".box").hide();
+                    }
+                });
+            }).change();
+        });
+        $(document).ready(function(){
+    $('#show').click(function() {
+      $('.menu').toggle("slide");
+    });
+});
+    </script>
 @endsection
