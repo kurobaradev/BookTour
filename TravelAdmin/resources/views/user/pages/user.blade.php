@@ -1,7 +1,7 @@
 @extends('user.layouts.index')
 @section('content')
-    <div class="row" style="margin-top: 30px; height: 450px;">
-        <div class="col-4" style=" width: 200px;">
+    <div class="row container mx-auto" style="margin-top: 40px; height: 450px;">
+        <div class="col-3" >
             <div class="list-group" id="list-tab" role="tablist">
                 <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list"
                     href="#list-home" role="tab" aria-controls="list-home">Thông tin cá nhân</a>
@@ -13,7 +13,7 @@
                     href="#list-settings" role="tab" aria-controls="list-settings">Tour đang đợi</a>
             </div>
         </div>
-        <div class="col-8">
+        <div class="col-9 text-dark">
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
                     <div class="row g-5">

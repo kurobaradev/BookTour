@@ -41,7 +41,7 @@ class AdminCategoryBlogController extends Controller
             'parent_id' => $request->parent_id,
             'slug' => Str::slug($request->name)
         ]);
-        return redirect(route('categorycar.index'));
+        return redirect(route('categoryblog.index'));
     }
     public function edit($parent_id)
     {

@@ -32,7 +32,10 @@ Route::prefix('/')->group(function () {
     Route::get('/cars/{id}', [ TrangChuController::class,'detailcars'])->name('chitietxe.index');  
     Route::get('/cars/{id}/{slug}.html', [TrangChuController::class,'categorycar'])->name('danhmucxe.index');
     // chua hoan thanh
-    Route::get('/search', [ TrangChuController::class,'search'])->name('timkiem.index');  
+    Route::get('/search', [ TourController::class,'search'])->name('timkiem.index');  
+    Route::get('/loginUser', [ TourController::class,'loginUser'])->name('loginUser.index'); 
+    Route::get('/registrationUser', [ TourController::class,'registrationUser'])->name('registrationUser.index');
+    Route::get('/confirmEmail', [ TourController::class,'confirmEmail'])->name('confirmEmail.index'); 
     Route::get('/user', [ TrangChuController::class,'user'])->name('thongtincanhan.index');  
 
 

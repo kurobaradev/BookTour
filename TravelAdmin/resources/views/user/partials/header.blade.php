@@ -1,21 +1,21 @@
-<nav class="navbar navbar-expand-md fixed-top" style="background: #1B4A7A;">
+<nav class="navbar navbar-expand-md fixed-top bg-warning">
     <div class="container-fluid">
-        <a class="navbar-brand text-warning" href="#"><i class="fas fa-2x fa-spa"></i></a>
+        <a class="navbar-brand text-dark" href="#"><i class="fas fa-2x fa-spa"></i></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0 text-dark">
                 <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="{{ route('trangchu.index') }}"> <i
-                            class="fas fa-home"></i> Trang chủ</a>
+                    <h5><a class="nav-link text-dark active" aria-current="page" href="{{ route('trangchu.index') }}"> <i
+                            class="fas fa-home"></i> Trang chủ</a></h5>
                 </li>
                 <li class="nav-item">
                     <div class="dropdown">
-                        <a class="nav-link text-white dropdown-toggle" id="dropdownMenuButton1"
+                        <h5><a class="nav-link text-dark dropdown-toggle" id="dropdownMenuButton1"
                             data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-plane-departure"></i>
-                            Tour</a>
+                            Tour</a></h5>
                         <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="dropdownMenuButton1"
                             style="background: #ffffff;">
                             <li><a class="dropdown-item" href="{{ route('tatcatour.index') }}"><Strong>Tất cả
@@ -40,8 +40,8 @@
                 </li>
                 <li class="nav-item">
                     <div class="dropdown">
-                        <a class="nav-link text-white dropdown-toggle" id="dropdownMenuButton2"
-                            data-bs-toggle="dropdown"><i class="fas fa-motorcycle"></i> Phương tiện</a>
+                        <h5><a class="nav-link text-dark dropdown-toggle" id="dropdownMenuButton2"
+                            data-bs-toggle="dropdown"><i class="fas fa-motorcycle"></i> Phương tiện</a></h5>
                         {{-- <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2" style="background: #1B4A7A;">
                   <li><a class="dropdown-item" href="{{route('xe.index')}}">Tất cả các loại xe</a></li>
                   @foreach ($categoryCar as $categoryCarParent)
@@ -72,21 +72,22 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('tintuc.index') }}"><i class="fas fa-book"></i> Cẩm
-                        nang du lịch</a>
+                    <h5><a class="nav-link text-dark" href="{{ route('tintuc.index') }}"><i class="fas fa-book"></i> Cẩm
+                        nang du lịch</a></h5>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('gioithieu.index') }}"></i>Giới thiệu</a>
+                    <h5><a class="nav-link text-dark" href="{{ route('gioithieu.index') }}"></i>Giới thiệu</a></h5>
                 </li>
             </ul>
 
             @if (Auth::check())
                 <div class="text-end">
-                    <button type="button" class="btn btn-outline-light me-2">logout</button>
+                    <a href="{{ route('thongtincanhan.index') }}" class="btn btn-outline-dark rounded-circle position-relative" style="height: 30px; width: 30px;"><i class="far fa-2x fa-user-circle position-absolute top-50 start-50 translate-middle"></i></a>
+                    <button type="button" class="btn btn-outline-dark">Logout</button>
                 </div>
             @else
-                <button type="button" class="btn btn-outline-light me-2">Login</button>
-                <button type="button" class="btn btn-warning">Sign-up</button>
+                <button type="button" class="btn btn-outline-dark me-2">Login</button>
+                <button type="button" class="btn btn-outline-dark">Sign-up</button>
             @endif
 
         </div>

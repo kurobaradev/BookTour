@@ -41,7 +41,12 @@
                 font-size: 3.5rem;
             }
         }
-
+        .hoverimg {
+            overflow: hidden;
+        }
+        .hoverimg:hover img{
+            transform: scale(1.2);
+        }
     </style>
     <style type="text/css">
         /* ============ desktop view ============ */

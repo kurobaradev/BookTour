@@ -18,12 +18,13 @@ class TrangChuController extends Controller
 {
     public function index()
     {
+        $car = Cars::latest()->get();
         $slider = Slider::latest()->get();
-        $tours = Tour::limit(2)->get();
+        $tours = Tour::limit(6)->get();
         $blogs = Blogs::latest()->get();
         $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
         $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
-        return view('user.pages.trangchu', compact('slider', 'tours', 'blogs', 'categoryCar', 'categoryTour'));
+        return view('user.pages.trangchu', compact('slider', 'tours', 'blogs', 'categoryCar', 'categoryTour','car'));
     }
     public function about()
     {

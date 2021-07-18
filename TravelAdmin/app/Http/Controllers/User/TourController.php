@@ -7,6 +7,7 @@ use App\Models\Cars;
 use App\Models\CategoriesTour;
 use App\Models\CategoryCars;
 use App\Models\oder;
+use App\Models\Slider;
 use App\Models\Tour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,28 +15,31 @@ use Illuminate\Support\Facades\Auth;
 class TourController extends Controller
 {
     public function index($id)
-    {
+    {  
+        $slider = Slider::latest()->get();
         $tour = Tour::find($id);
         $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
         $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
         $TourSame = Tour::where('category_tour_id', '=', $tour->category_tour_id)->get();
-        return view('user.pages.detail-tour', compact('tour', 'categoryCar', 'categoryTour', 'TourSame'));
+        return view('user.pages.detail-tour', compact('slider','tour', 'categoryCar', 'categoryTour', 'TourSame'));
     }
     public function alltour()
     {
+        $slider = Slider::latest()->get();
         $tour = Tour::all();
         $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
         $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
-        return view('user.pages.categorytour', compact('categoryCar', 'categoryTour', 'tour'));
+        return view('user.pages.categorytour', compact('slider','categoryCar', 'categoryTour', 'tour'));
     }
     public function categorytour($id)
     {
+        $slider = Slider::latest()->get();
         $tour = Tour::where('category_tour_id', $id)->take(3)->get();
         $categoryname = CategoriesTour::find($id);
         $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
         $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
         // $TourSame = Tour::where('category_tour_id', '=', $tour->category_tour_id)->get();
-        return view('user.pages.tour', compact('categoryCar', 'categoryTour', 'tour', 'categoryname'));
+        return view('user.pages.tour', compact('slider', 'categoryCar', 'categoryTour', 'tour', 'categoryname'));
     }
     public function booktour($id)
     {
@@ -96,5 +100,34 @@ class TourController extends Controller
         ]);
         $dataOderCreate->save();
         return redirect(route('trangchu.index'));
+    }
+    public function search()
+    {
+        $slider = Slider::latest()->get();
+        $tour = Tour::all();
+        $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
+        $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
+        return view('user.pages.search', compact('slider','categoryCar', 'categoryTour', 'tour'));
+    }
+    public function loginUser()
+    {
+        $tour = Tour::all();
+        $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
+        $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
+        return view('user.pages.loginUser', compact('categoryCar', 'categoryTour', 'tour'));
+    }
+    public function registrationUser()
+    {
+        $tour = Tour::all();
+        $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
+        $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
+        return view('user.pages.registrationUser', compact('categoryCar', 'categoryTour', 'tour'));
+    }
+    public function confirmEmail()
+    {
+        $tour = Tour::all();
+        $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
+        $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
+        return view('user.pages.confirmEmail', compact('categoryCar', 'categoryTour', 'tour'));
     }
 }
