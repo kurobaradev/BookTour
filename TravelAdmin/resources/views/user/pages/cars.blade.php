@@ -19,16 +19,16 @@
       <div class="col-12 g-3 text-dark row">
         @foreach ($cars as $item)
         <div class=" col-3">
-          <div class="card" style="width: 100%; height: 300px;">
-            <a href="{{ route('chitietxe.index', ['id' => $item->id]) }}"><img src="{{ $item->feature_image_path }}" class="card-img-top" alt="..."></a>
-            <div class="card-body">
+          <div class="card" style="width: 100%; height: 350px;">
+            <a href="{{ route('chitietxe.index', ['id' => $item->id]) }}"><img src="{{ $item->feature_image_path }}" class="card-img-top" alt="..." style="height:140px"></a>
+            <div class="card-body position-relative" style="height:210px">
               <div class="text-over2">
                 <h5 class="card-title"><a href="{{ route('chitietxe.index', ['id' => $item->id]) }}" class="text-decoration-none text-dark">{{ $item->name }}</a></h5>
               </div>
               <div class="text-over3">
                 <p class="card-text"><a href="{{ route('chitietxe.index', ['id' => $item->id]) }}" class="text-decoration-none text-dark">{{ $item->description }}</a></p>
               </div>
-              <a href="#" class="btn btn-warning">Thuê</a>
+              <a href="#" class="btn btn-warning position-absolute bottom-0 start-0 m-2">Thuê</a>
             </div>
           </div>
         </div>
