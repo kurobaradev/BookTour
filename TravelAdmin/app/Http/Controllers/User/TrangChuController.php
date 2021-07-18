@@ -36,19 +36,21 @@ class TrangChuController extends Controller
     }
     public function cars()
     {
+        $slider = Slider::latest()->get();
         $cars = Cars::all();
         $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
         $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
         // dd($introduce->content);
-        return view('user.pages.cars', compact('cars', 'categoryCar', 'categoryTour'));
+        return view('user.pages.cars', compact('slider', 'cars', 'categoryCar', 'categoryTour'));
     }
     public function detailcars($id)
     {
+        $slider = Slider::latest()->get();
         $cars = Cars::find($id);
         $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
         $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
         // dd($introduce->content);
-        return view('user.pages.detail-cars', compact('cars', 'categoryCar', 'categoryTour'));
+        return view('user.pages.detail-cars', compact('slider', 'cars', 'categoryCar', 'categoryTour'));
     }
     public function categorycar($id)
     {

@@ -55,10 +55,10 @@
             <a href="{{route('chitietxe.index',['id'=>$car->id])}}" class="hoverimg"><img src="{{$car->feature_image_path}}" class="card-img-top" alt="..." style="height:140px"></a>
             <div class="card-body">
               <div class="text-over2">
-              <h5 class="card-title"><a href="{{route('chitietxe.index',['id'=>$car->id])}}" class="text-decoration-none link-dark"><strong>{{$car->name}}</strong></a></h5>
+                <h5 class="card-title"><a href="{{route('chitietxe.index',['id'=>$car->id])}}" class="text-decoration-none link-dark"><strong>{{$car->name}}</strong></a></h5>
               </div>
               <div class="text-over3">
-              <p class="card-text p-0 m-0"><a href="{{route('chitietxe.index',['id'=>$car->id])}}" class="text-decoration-none text-dark" style="max-width: 100%;">{{$car->description}}</a></p>
+                <p class="card-text p-0 m-0"><a href="{{route('chitietxe.index',['id'=>$car->id])}}" class="text-decoration-none text-dark" style="max-width: 100%;">{{$car->description}}</a></p>
               </div>
               <p class="card-text m-0 p-0"><a href="{{route('chitietxe.index',['id'=>$car->id])}}" class="text-decoration-none text-dark"><i class="fas fa-money-bill-alt"></i><strong> Giá:</strong>{{$car->price}} </a></p>
             </div>

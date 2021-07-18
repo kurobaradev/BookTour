@@ -11,6 +11,8 @@
                     href="#list-messages" role="tab" aria-controls="list-messages">Lịch sử đặt tour</a>
                 <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
                     href="#list-settings" role="tab" aria-controls="list-settings">Tour đang đợi</a>
+                <a class="list-group-item list-group-item-action" id="list-settings-list1" data-bs-toggle="list"
+                    href="#list-settings1" role="tab" aria-controls="list-settings1">Đặt xe</a>
             </div>
         </div>
         <div class="col-9 text-dark">
@@ -109,6 +111,34 @@
                                 <th scope="col">Giờ khởi hành</th>
                                 <th scope="col">Số ngày</th>
                                 <th scope="col">Giá</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($tourwat as $item)
+                                <tr>
+                                    <th scope="row">{{ $item->id }}</th>
+                                    <td class=" text-truncate" style="max-width: 200px;">{{ $item->tour_name }}</td>
+                                    <td>{{ $item->departed }}</td>
+                                    <td>{{ $item->duration }}</td>
+                                    <td>{{ $item->price }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="list-settings1" role="tabpanel" aria-labelledby="list-settings-list1">
+                    <h3 class="pb-4 mb-4 fst-italic border-bottom">
+                        Danh sách đặt xe
+                    </h3>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Tên xe</th>
+                                <th scope="col">Loại xe</th>
+                                <th scope="col">Giá</th>
+                                <th scope="col">Ngày đặt</th>
+                                <th scope="col">Số ngày</th>
                             </tr>
                         </thead>
                         <tbody>
