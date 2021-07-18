@@ -23,9 +23,10 @@ class TinTucController extends Controller
     }
     public function allnews()
     {
+        $slider = Slider::latest()->get();
         $blog = Blogs::all();
         $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
         $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
-        return view('user.pages.news', compact('blog', 'categoryCar', 'categoryTour'));
+        return view('user.pages.news', compact('slider', 'blog', 'categoryCar', 'categoryTour'));
     }
 }

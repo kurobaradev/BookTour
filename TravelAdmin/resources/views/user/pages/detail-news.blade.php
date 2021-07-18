@@ -1,6 +1,7 @@
 @extends('user.layouts.index')
 @section('content')
-
+    {{-- slider --}}
+    @include('user.pages.components.home.slider')
 
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
@@ -9,7 +10,7 @@
 
         <!-- START THE FEATURETTES -->
 
-        <div class="row g-5 position-relative mt-4 mb-2 p-0">
+        <div class="row g-5 mb-2 p-0">
             <div class="col-md-8">
                 <h3 class=" fst-italic text-warning">
                     {{ $blog->title }}
@@ -31,19 +32,21 @@
             </div>
 
             <div class="col-md-4">
-                <div class="mt-5 row">
-                    <h5 class="text-warning col-10">Tin tức mới</h5>
-                    @foreach ($blogNew as $blogNew)
-                        <a href="{{ route('chitiettintuc.index', ['id' => $blogNew->id]) }}" class="text-decoration-none"
-                            id="tin">{{ $blogNew->title }}</a>
-                    @endforeach
-                    <h5 class="text-warning col-10 boder-right-warning">Tin tức ngẫu nhiên</h5>
-                    @foreach ($blogRamdom as $blogRamdom)
-                        <a href="{{ route('chitiettintuc.index', ['id' => $blogRamdom->id]) }}" class="text-decoration-none"
-                            id="tin">{{ $blogRamdom->title }}</a>
-                    @endforeach
-                    <a href="#" class="col-5 text-warning mt-2"> Xem thêm >>></a>
+                <div class="position-sticky" style="top: 4rem;">
+                    <div class="mt-5 row">
+                        <h5 class="text-warning col-10">Tin tức mới</h5>
+                        @foreach ($blogNew as $blogNew)
+                            <a href="{{ route('chitiettintuc.index', ['id' => $blogNew->id]) }}" class="text-decoration-none"
+                                id="tin">{{ $blogNew->title }}</a>
+                        @endforeach
+                        <h5 class="text-warning col-10 boder-right-warning">Tin tức ngẫu nhiên</h5>
+                        @foreach ($blogRamdom as $blogRamdom)
+                            <a href="{{ route('chitiettintuc.index', ['id' => $blogRamdom->id]) }}" class="text-decoration-none"
+                                id="tin">{{ $blogRamdom->title }}</a>
+                        @endforeach
+                        <a href="#" class="col-5 text-warning mt-2"> Xem thêm >>></a>
 
+                    </div>
                 </div>
             </div>
         </div>
