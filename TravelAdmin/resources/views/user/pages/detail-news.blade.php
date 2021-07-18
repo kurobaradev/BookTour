@@ -32,21 +32,18 @@
             </div>
 
             <div class="col-md-4">
-                <div class="position-sticky" style="top: 4rem;">
-                    <div class="mt-5 row">
-                        <h5 class="text-warning col-10">Tin tức mới</h5>
-                        @foreach ($blogNew as $blogNew)
-                            <a href="{{ route('chitiettintuc.index', ['id' => $blogNew->id]) }}" class="text-decoration-none"
-                                id="tin">{{ $blogNew->title }}</a>
-                        @endforeach
-                        <h5 class="text-warning col-10 boder-right-warning">Tin tức ngẫu nhiên</h5>
-                        @foreach ($blogRamdom as $blogRamdom)
-                            <a href="{{ route('chitiettintuc.index', ['id' => $blogRamdom->id]) }}" class="text-decoration-none"
-                                id="tin">{{ $blogRamdom->title }}</a>
-                        @endforeach
-                        <a href="#" class="col-5 text-warning mt-2"> Xem thêm >>></a>
-
-                    </div>
+                <div class="mt-5 row">
+                    <h5 class="text-warning col-10">Tin tức mới</h5>
+                    @foreach ($blogNew as $blogNew)
+                        <a href="{{ route('chitiettintuc.index', ['id' => $blogNew->id]) }}" class="text-decoration-none"
+                            id="tin">{{ $blogNew->title }}</a>
+                    @endforeach
+                    <h5 class="text-warning col-10 boder-right-warning">Tin tức ngẫu nhiên</h5>
+                    @foreach ($blogRamdom as $blogRamdom)
+                        <a href="{{ route('chitiettintuc.index', ['id' => $blogRamdom->id]) }}" class="text-decoration-none"
+                            id="tin">{{ $blogRamdom->title }}</a>
+                    @endforeach
+                    <a href="#" class="col-5 text-warning mt-2"> Xem thêm >>></a>
                 </div>
             </div>
         </div>
