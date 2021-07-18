@@ -11,7 +11,8 @@ use App\Models\Slider;
 use App\Models\Tour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Mailodertour;
 class TourController extends Controller
 {
     public function index($id)
@@ -98,8 +99,9 @@ class TourController extends Controller
             'status' => 0,
             'user_id' => auth()->id(),
         ]);
+        Mail::to('hoan.uda@gmail.com')->send(new Mailodertour($dataOderCreate));
         $dataOderCreate->save();
-        return redirect(route('trangchu.index'));
+        return redirect(route('thongtincanhan.index'));
     }
     public function search()
     {

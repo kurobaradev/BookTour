@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\AdminCategoryBlogController;
 use App\Http\Controllers\admin\AdminCategoryCarController;
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\AdminIntroduceController;
+use App\Http\Controllers\admin\AdminOderController;
 use App\Http\Controllers\admin\AdminSliderController;
 use App\Http\Controllers\admin\AdminTourController;
 use App\Http\Controllers\User\TinTucController;
@@ -111,7 +112,11 @@ Route::prefix('/admin')->group(function () {
         Route::get('/', [ AdminIntroduceController::class,'index'])->name('introduce.index');
         Route::post('/update/{id}', [ AdminIntroduceController::class,'update'])->name('introduce.update');
     });
-    
+    Route::prefix('oder')->group(function () {
+        Route::get('/', [ AdminOderController::class,'index'])->name('oder.index');
+        Route::post('/store/{id}', [ AdminOderController::class,'store'])->name('confirmoder.index');
+
+    });
   
 });
 
