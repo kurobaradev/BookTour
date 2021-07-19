@@ -5,20 +5,29 @@
 
 @section('content')
 <div class="container-fluid">
-
+  {{-- @error('title') is-invalid @enderror
+  value="{{old('title')}}
+  @error('title')
+    <div class="alert alert-danger">{{ $message }}</div>
+  @enderror --}}
     <!-- Page Heading -->
     @include('admin.partials.content-header',['name'=>'Quản lí loại tin tức','key'=>'Thêm loại tin tức'])
     <!-- DataTales Example -->
     <form action="{{route('categoryblog.store')}}" method="POST">
         @csrf
         <div class="form-group">
+          {{-- <input id="title" type="text" name="title" class="@error('title') is-invalid @enderror"> --}}
+          
           <label >Tên danh mục</label>
           <input  type="text" 
-                  class="form-control"
+                  class="form-control @error('name') is-invalid @enderror"
                   placeholder="Tên danh mục"
                   name="name"
+                  value="{{old('name')}}"
                   >
-        </div>
+          @error('name')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         <div class="form-group">
           <label >chọn danh mục cha</label>
           <select class="form-control" name="parent_id">

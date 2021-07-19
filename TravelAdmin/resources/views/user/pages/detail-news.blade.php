@@ -25,10 +25,11 @@
                 <br />
                 <i>{{ $blog->description }} </i>
 
-                {{-- <img src="{{$blog->feature_image_path}}" class="rounded-start" style="width: 100%;"/> --}}
+               <div class=" content">
                 @php
                     echo $blog->content;
                 @endphp
+                </div>
             </div>
 
             <div class="col-md-4">
@@ -64,6 +65,8 @@
             color: orange;
             border-left: solid 2px orange;
         }
-
+        .content img{
+            max-width: 800px;
+        }
     </style>
 @endsection

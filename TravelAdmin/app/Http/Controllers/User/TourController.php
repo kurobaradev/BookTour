@@ -44,20 +44,25 @@ class TourController extends Controller
     }
     public function booktour($id)
     {
-        $tour = Tour::find($id);
-        $car = Cars::all();
+      
         $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
         $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
-        $TourSame = Tour::where('category_tour_id', '=', $tour->category_tour_id)->get();
-        return view('user.pages.book-tour', compact('categoryCar', 'categoryTour', 'tour', 'TourSame', 'car'));
+        if (Auth::check()) {
+            $tour = Tour::find($id);
+            $car = Cars::all();
+            $TourSame = Tour::where('category_tour_id', '=', $tour->category_tour_id)->get();
+            return view('user.pages.book-tour', compact('categoryCar', 'categoryTour', 'tour', 'TourSame', 'car'));
+            // return redirect(route('thongtincanhan.index'));
+        }
+        return view('user.pages.loginUser', compact('categoryCar', 'categoryTour'));
     }
-    public function pay($id)
-    {
-        $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
-        $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
-        // $TourSame = Tour::where('category_tour_id', '=', $tour->category_tour_id)->get();
-        return view('user.pages.pay', compact('categoryCar', 'categoryTour',));
-    }
+    // public function pay($id)
+    // {
+    //     $categoryCar = CategoryCars::where('parent_id', 0)->take(3)->get();
+    //     $categoryTour = CategoriesTour::where('parent_id', 0)->take(3)->get();
+    //     // $TourSame = Tour::where('category_tour_id', '=', $tour->category_tour_id)->get();
+    //     return view('user.pages.pay', compact('categoryCar', 'categoryTour',));
+    // }
     public function payadd(Request $request)
     {
         $dataOderCreate = [
@@ -68,8 +73,7 @@ class TourController extends Controller
             'Nguoilon' => $request->Nguoilon,
             'treem' => $request->treem,
             'phone' => $request->phone,
-            'price_car' => $request->price_car,
-            'price' => ((($request->price_tour * $request->Nguoilon) + (($request->price_tour * $request->treem) / 100 * 30)) + $request->price_car),
+            'price' => ((($request->price_tour * $request->Nguoilon) + (($request->price_tour * $request->treem) / 100 * 30))),
             'user_name' => Auth::user()->name,
             'user_mail' => Auth::user()->email,
             'status' => 0,
@@ -92,7 +96,6 @@ class TourController extends Controller
             'Nguoilon' => $request->Nguoilon,
             'treem' => $request->treem,
             'phone' => $request->phone,
-            'price_car' => $request->price_car,
             'price' => $request->price,
             'user_name' => Auth::user()->name,
             'user_mail' => Auth::user()->email,

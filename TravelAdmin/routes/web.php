@@ -7,12 +7,15 @@ use App\Http\Controllers\admin\AdminCategoryBlogController;
 use App\Http\Controllers\admin\AdminCategoryCarController;
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\AdminIntroduceController;
+use App\Http\Controllers\admin\AdminOderCarController;
 use App\Http\Controllers\admin\AdminOderController;
 use App\Http\Controllers\admin\AdminSliderController;
 use App\Http\Controllers\admin\AdminTourController;
+use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\TinTucController;
 use App\Http\Controllers\User\TourController;
 use App\Http\Controllers\User\TrangChuController;
+use App\Http\Controllers\User\UserController as UserUserController;
 use Illuminate\Support\Facades\Route;
 
 use Illuminate\Support\Facades\Auth;
@@ -32,14 +35,20 @@ Route::prefix('/')->group(function () {
     Route::get('/cars', [ TrangChuController::class,'cars'])->name('xe.index');  
     Route::get('/cars/{id}', [ TrangChuController::class,'detailcars'])->name('chitietxe.index');  
     Route::get('/cars/{id}/{slug}.html', [TrangChuController::class,'categorycar'])->name('danhmucxe.index');
-    // chua hoan thanh
-    Route::get('/search', [ TrangChuController::class,'search'])->name('timkiem.index');  
+    Route::get('/timkiemxe', [ TrangChuController::class,'searchcar'])->name('timkiemxe.index');  
+    Route::get('/timkiemtour', [ TrangChuController::class,'searchtour'])->name('timkiemtour.index');  
     Route::get('/loginUser', [ TrangChuController::class,'loginUser'])->name('loginUser.index'); 
     Route::get('/registrationUser', [ TrangChuController::class,'registrationUser'])->name('registrationUser.index');
     Route::get('/confirmEmail', [ TrangChuController::class,'confirmEmail'])->name('confirmEmail.index'); 
     Route::get('/user', [ TrangChuController::class,'user'])->name('thongtincanhan.index');  
-    Route::get('/book-car', [ TrangChuController::class,'bookcar'])->name('bookcar.index'); 
-
+    Route::get('/book-car/{id}', [ TrangChuController::class,'bookcar'])->name('bookcar.index');
+    Route::post('/paycar/add', [TrangChuController::class,'payaddcar'])->name('thanhtoanxe.index');
+    Route::post('/paycar/payconfirm', [TrangChuController::class,'payconfirmcar'])->name('payconfirmcar.index');
+    Route::get('/loginuser', [ UserController::class,'loginUser'])->name('userlogin.index');
+    Route::post('/loginuser', [ UserController::class,'postloginUser'])->name('postloginuser.index');
+    Route::get('/registeruser', [ UserUserController::class,'registerUser'])->name('userregister.index');
+    Route::post('/registeruser', [ UserController::class,'postregisterUser']);
+    Route::get('/logoutuser', [ UserController::class,'logout'])->name('user.logout');;
 });
 
 Route::prefix('/admin')->group(function () {
@@ -114,8 +123,13 @@ Route::prefix('/admin')->group(function () {
     });
     Route::prefix('oder')->group(function () {
         Route::get('/', [ AdminOderController::class,'index'])->name('oder.index');
-        Route::post('/store/{id}', [ AdminOderController::class,'store'])->name('confirmoder.index');
-
+        Route::get('/store/{id}', [ AdminOderController::class,'update'])->name('confirmoder.index');
+        Route::get('/pdf/{id}', [ AdminOderController::class,'pdf'])->name('pdftour.pdf');
+    });
+    Route::prefix('odercar')->group(function () {
+        Route::get('/', [ AdminOderCarController::class,'index'])->name('odercar.index');
+        Route::get('/store/{id}', [ AdminOderCarController::class,'update'])->name('confirmodercar.index');
+        Route::get('/pdf/{id}', [ AdminOderCarController::class,'pdf'])->name('pdfcar.pdf');
     });
   
 });

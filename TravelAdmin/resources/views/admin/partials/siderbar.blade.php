@@ -23,21 +23,37 @@
     <hr class="sidebar-divider">
 
     <!-- Nav Item - Pages Collapse Menu -->
-    {{-- loại tour --}}
+     
+    {{-- loại Giới thiệu --}}
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseabout"
-            aria-expanded="true" aria-controls="collapseabout">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseaoder"
+            aria-expanded="true" aria-controls="collapseaoder">
             <i class="fas fa-fw fa-table"></i>
             <span>thông tin giới thiệu</span>
         </a>
-        <div id="collapseabout" class="collapse" aria-labelledby="heading1" data-parent="#accordionSidebar">
+        <div id="collapseaoder" class="collapse" aria-labelledby="heading1" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{route('introduce.index')}}">Thông tin giới thiệu</a>
                 <a class="collapse-item" href="{{route('slider.index')}}">Chỉnh sửa slider</a>
             </div>
         </div>
     </li>
-    {{-- end loại tour --}}
+    {{-- end loại Giới thiệu --}}
+    {{-- quản lí oder --}}
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseabout"
+            aria-expanded="true" aria-controls="collapseabout">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Quản lí đơn</span>
+        </a>
+        <div id="collapseabout" class="collapse" aria-labelledby="heading1" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{route('oder.index')}}">Đơn đặt tour</a>
+                <a class="collapse-item" href="{{route('odercar.index')}}">Đơn đặt xe</a>
+            </div>
+        </div>
+    </li>
+    {{-- end quản lí oder --}}
     {{-- loại tour --}}
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse1"

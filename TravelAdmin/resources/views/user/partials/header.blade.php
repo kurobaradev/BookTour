@@ -83,7 +83,7 @@
             @if (Auth::check())
                 <div class="text-end">
                     <a href="{{ route('thongtincanhan.index') }}" class="btn btn-outline-dark rounded-circle position-relative" style="height: 30px; width: 30px;"><i class="far fa-2x fa-user-circle position-absolute top-50 start-50 translate-middle"></i></a>
-                    <button type="button" class="btn btn-outline-dark">Logout</button>
+                    <a href="{{route('user.logout')}}" type="button" class="btn btn-outline-dark">Logout</a>
                 </div>
             @else
                 <button type="button" class="btn btn-outline-dark me-2">Login</button>

@@ -25,16 +25,16 @@
         <!-- Tab panes -->
         <div class="tab-content">
           <div class="tab-pane active " id="home" role="tabpanel">
-            <div class="input-group" style="width: 100%; height: 50px;">
-              <input type="text" class="form-control" placeholder="Nhập từ khóa để tìm kiếm tour" aria-label="Recipient's username" aria-describedby="basic-addon2">
-              <button class="btn btn-outline-warning btn-dark" type="button">TÌM KIẾM</button>
-            </div>
+            <form class="input-group" style="width: 100%; height: 50px;"  type="GET" action="{{route('timkiemtour.index')}}">
+              <input type="text" name="search_tour" class="form-control" placeholder="Nhập từ khóa để tìm kiếm tour" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <button class="btn btn-outline-warning btn-dark" type="submit">TÌM KIẾM</button>
+            </form>
           </div>
           <div class="tab-pane" id="profile" role="tabpanel">
-            <div class="input-group" style="width: 100%; height: 50px;">
-              <input type="text" class="form-control" placeholder="Nhập từ khóa để tìm kiếm phương tiện" aria-label="Recipient's username" aria-describedby="basic-addon2">
-              <button class="btn btn-outline-warning btn-dark" type="button">TÌM KIẾM</button>
-            </div>
+            <form class="input-group" style="width: 100%; height: 50px;" type="GET" action="{{route('timkiemxe.index')}}">
+              <input type="text" name="search_car" class="form-control" placeholder="Nhập từ khóa để tìm kiếm phương tiện" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <button class="btn btn-outline-warning btn-dark" type="submit">TÌM KIẾM</button>
+            </form>
           </div>
         </div>
       </div>

@@ -19,9 +19,11 @@
                 </figcaption>
                 </figure>
                 <img src="{{ $cars->feature_image_path }}" style="width: 100%;">
-                <div class="container">
-                    
-                    {{$cars->content}}
+                <div class="container content">
+                    @php
+                        
+                        echo $cars->content
+                    @endphp
                     
                 </div>
             </div>
@@ -29,11 +31,10 @@
             <div class="col-md-4">
                 <div class="position-sticky" style="top: 3rem;">
                     <div class="p-4 mb-3 bg-light rounded">
-                        <h4 class="fst-italic">CHI TIẾT XE</h4>
-                        <h5 class="card-title">XE</h5>
-                        <p class="card-text m-0"> 222</p>
-                        <p class="card-text m-0"><i class="fas fa-money-bill-alt"></i> <strong>Giá:</strong>123</p>
-                        <a href="" type="button" class="btn btn-warning">Đặt xe</a>
+                        <h5 class="card-title">{{$cars->name}}</h5>
+                        <p class="card-text m-0"> {{$cars->description}}</p>
+                        <p class="card-text m-0"><i class="fas fa-money-bill-alt"></i> <strong>Giá:</strong>{{$cars->price}}</p>
+                        <a href="{{ route('bookcar.index', ['id' => $cars->id]) }}" type="button" class="btn btn-warning">Đặt xe</a>
                     </div>
                 </div>
             </div>
@@ -41,4 +42,13 @@
     </div>
 
     
+@endsection
+@section('css')
+
+    <style>
+
+        .content img{
+            max-width: 800px;
+        }
+    </style>
 @endsection

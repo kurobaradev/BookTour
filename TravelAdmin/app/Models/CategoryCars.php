@@ -15,4 +15,8 @@ class CategoryCars extends Model
     {
         return $this->hasMany(CategoryCars::class,'parent_id');
     }
+    public function cars()
+    {
+        return $this->belongsTo(Cars::class,'id');
+    }
 }
