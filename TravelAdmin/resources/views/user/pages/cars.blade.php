@@ -19,8 +19,8 @@
       <div class="col-12 g-3 text-dark row">
         @foreach ($cars as $item)
         <div class=" col-3">
-          <div class="card" style="width: 100%; height: 300px;">
-            <a href="{{ route('chitietxe.index', ['id' => $item->id]) }}"><img src="{{ $item->feature_image_path }}" class="card-img-top" alt="..."></a>
+          <div class="card" style="width: 100%; height: 350px;">
+            <a href="{{ route('chitietxe.index', ['id' => $item->id]) }}"><img src="{{ $item->feature_image_path }}" class="card-img-top" style="height:140px"></a>
             <div class="card-body">
               <div class="text-over2">
                 <h5 class="card-title"><a href="{{ route('chitietxe.index', ['id' => $item->id]) }}" class="text-decoration-none text-dark">{{ $item->name }}</a></h5>

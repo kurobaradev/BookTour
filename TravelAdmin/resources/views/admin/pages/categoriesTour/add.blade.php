@@ -12,12 +12,18 @@
     <form action="{{route('categoriestour.store')}}" method="POST">
         @csrf
         <div class="form-group">
+          {{-- <input id="title" type="text" name="title" class="@error('title') is-invalid @enderror"> --}}
+          
           <label >Tên danh mục</label>
           <input  type="text" 
-                  class="form-control"
+                  class="form-control @error('name') is-invalid @enderror"
                   placeholder="Tên danh mục"
                   name="name"
+                  value="{{old('name')}}"
                   >
+          @error('name')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         </div>
         <div class="form-group">
           <label >chọn danh mục cha</label>

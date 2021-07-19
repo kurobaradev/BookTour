@@ -19,9 +19,11 @@
                 </figcaption>
                 </figure>
                 <img src="{{ $cars->feature_image_path }}" style="width: 100%;">
-                <div class="container">
-                    
-                    {{$cars->content}}
+                <div class="container content">
+                    @php
+                        
+                        echo $cars->content
+                    @endphp
                     
                 </div>
             </div>
@@ -41,4 +43,13 @@
     </div>
 
     
+@endsection
+@section('css')
+
+    <style>
+
+        .content img{
+            max-width: 800px;
+        }
+    </style>
 @endsection

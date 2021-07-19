@@ -20,10 +20,12 @@
         </figcaption>
         </figure>
         <img src="{{ $tour->feature_image_path }}" style="width: 100%;">
-        <div class="container">
+        <div class="container content">
 
-            
-               {{$tour->content}}
+          @php
+                        
+          echo $tour->content
+      @endphp
             
         </div>
       </div>
@@ -46,3 +48,13 @@
 
   </div><!-- /.container -->
 @endsection
+@section('css')
+
+    <style>
+
+        .content img{
+            max-width: 800px;
+        }
+    </style>
+@endsection
+
