@@ -102,7 +102,7 @@ class TourController extends Controller
             'status' => 0,
             'user_id' => auth()->id(),
         ]);
-        Mail::to('hoan.uda@gmail.com')->send(new Mailodertour($dataOderCreate));
+        Mail::to(Auth::user()->email)->send(new Mailodertour($dataOderCreate));
         $dataOderCreate->save();
         return redirect(route('thongtincanhan.index'));
     }

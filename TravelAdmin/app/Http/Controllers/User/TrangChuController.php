@@ -146,7 +146,7 @@ class TrangChuController extends Controller
             'status' => 0,
             'user_id' => auth()->id(),
         ]);
-        Mail::to('hoan.uda@gmail.com')->send(new OderCar($dataOdercarCreate));
+        Mail::to(Auth::user()->email)->send(new OderCar($dataOdercarCreate));
         $dataOdercarCreate->save();
         return redirect(route('thongtincanhan.index'));
     }
