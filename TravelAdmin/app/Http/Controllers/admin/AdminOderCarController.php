@@ -3,41 +3,38 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\oder;
+use App\Models\Oder_Car;
+// use App\Models\OderCar;
 use Illuminate\Http\Request;
-use App\Mail\Mailodertour;
 use Barryvdh\DomPDF\Facade as PDF;
-use Illuminate\Support\Facades\Mail;
 
-
-
-class AdminOderController extends Controller
+class AdminOderCarController extends Controller
 {
-    private $oders;
-    public function __construct(oder $oders)
+    private $cars;
+    public function __construct(Oder_Car $cars)
     {
-        $this->oders = $oders;
+        $this->cars = $cars;
     }
     public function index()
     {
       
-        $oders = $this->oders->latest()->get();
-        return view('admin.pages.oder.index', compact('oders'));
+        $cars = $this->cars->latest()->get();
+        return view('admin.pages.odercar.index', compact('cars'));
     }
     public function update($id)
     {
-        $this->oders->find($id)->update(
+        $this->cars->find($id)->update(
             [
                 'status' => 1,
             ]
         );
-        return redirect(route('oder.index'));
+        return redirect(route('odercar.index'));
     }
     public function pdf($id) 
 {
-    $Oders = oder::find($id);
+    $cars = Oder_Car::find($id);
     $data = [
-        'chitiettour' => $Oders
+        'chitietcar' => $cars
     ];
 
     /* Code dành cho việc debug
@@ -49,10 +46,7 @@ class AdminOderController extends Controller
     //     ->with('chitiettour', $Oders);
     //     ->with('danhsachloai', $ds_loai);
     
-    $pdf = PDF::loadView('admin.pages.oder.pdf', $data);
-    return $pdf->download('pdftour.pdf');
+    $pdf = PDF::loadView('admin.pages.odercar.pdf', $data);
+    return $pdf->download('pdfcar.pdf');
 }
-    
-
-    
 }

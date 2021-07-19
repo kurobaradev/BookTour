@@ -54,7 +54,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td align="center" class="esd-block-text">
-                                                        <h1 style="color: #ffffff; font-family: 'times new roman', times, baskerville, georgia, serif;"><strong>Cảm ơn {{$oders->user_name}} đã đặt hàng tại Super tour</strong></h1>
+                                                        <h1 style="color: #ffffff; font-family: 'times new roman', times, baskerville, georgia, serif;"><strong>Cảm ơn {{$Oder_Car->user_name}} đã đặt hàng xe tại Super tour</strong></h1>
                                                         <p style="color: #ffffff;"><br></p>
                                                     </td>
                                                 </tr>
@@ -85,13 +85,10 @@
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td class="esd-block-text es-p20t es-p30r es-p30l es-m-txt-l" align="left">
-                                                                                        <p>Mã tour : {{$oders->id}}<br>
-                                                                                        Tên tour : {{$oders->tour_name}}<br>
-                                                                                        Ngày xuất phát : {{$oders->departed}}<br>
-                                                                                        Số ngày : {{$oders->duration}}<br>
-                                                                                        Số người lớn : {{$oders->Nguoilon}}<br>
-                                                                                        Số trẻ em : {{$oders->treem}}<br>
-                                                                                        Tổng giá tiền : {{number_format($oders->price)}}VND</p>
+                                                                                        <p>Tên xe : {{$Oder_Car->car_name}}<br>
+                                                                                        Ngày thuê : {{$Oder_Car->departed}}<br>
+                                                                                        Số ngày : {{$Oder_Car->duration}}<br>
+                                                                                        Tổng giá tiền : {{number_format($Oder_Car->price)}}VND</p>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>

@@ -71,7 +71,7 @@
                     <input type="number" class="form-control" id="staticEmail" name="treem">
                 </div>
             </div>
-            <div class=" form-group col-12">
+            {{-- <div class=" form-group col-12">
                 <label for="inputAddress" class="form-label">Dịch vụ thuê xe đi kèm</label>
                 <input class="form-check-input" type="checkbox" id="show" name="vehicle1" value="Bike">
                 <label class="form-check-label" for="flexCheckIndeterminate">Thuê xe đi kèm</label>
@@ -81,77 +81,30 @@
                         <!--dropdown list options-->
                         <select class="form-select form-select-sm" aria-label=".form-select-sm example">
                             <option selected>Open this select menu</option>
-                            <option value="loaix1">Loại xe 1</option>
-                            <option value="loaix2">Loại xe 2</option>
-                            <option value="loaix3">Loại xe 3</option>
+                            @foreach ($categoryCar as $item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                             @endforeach
+
 
                         </select>
+                            
                     </div>
                     <!--divs that hide and show-->
+                    @foreach ($categoryCar as $item)
+                    <div class="{{$item->id}} box">
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label">
+                            {{optional($item->cars)->name}}
+                        </label>
+                        </div>
 
-                    <div class="loaix1 box">
-                        <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label">
-                            Default radio
-                        </label>
-                        </div>
-                        <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                        <label class="form-check-label">
-                            Default checked radio
-                        </label>
-                        </div>
-                        <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                        <label class="form-check-label">
-                            Default checked radio
-                        </label>
-                        </div>
                     </div>
-                    <div class="loaix2 box">
+                    @endforeach
 
-                        <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label">
-                            Default radio
-                        </label>
-                        </div>
-                        <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                        <label class="form-check-label">
-                            Default checked radio
-                        </label>
-                        </div>
-                        <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                        <label class="form-check-label">
-                            Default checked radio
-                        </label>
-                        </div>
-                    </div>
-                    <div class="loaix3 box">
-                        <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label">
-                            Default radio
-                        </label>
-                        </div>
-                        <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                        <label class="form-check-label">
-                            Default checked radio
-                        </label>
-                        </div>
-                        <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                        <label class="form-check-label">
-                            Default checked radio
-                        </label>
-                        </div>
-                    </div>
+
                 </div>
-            </div>
+            </div> --}}
             <div class="col-12">
                 <button type="submit" class="btn btn-lg btn-primary">Đặt tour</button>
                 {{-- <button type="submit" class="btn btn-lg btn-primary">Hủy đặt tour</button> --}}

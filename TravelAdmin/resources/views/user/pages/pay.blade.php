@@ -72,13 +72,13 @@
                         value="{{ $dataOderCreate['phone'] }}">
                 </div>
             </div>
-            <div class="form-group row">
+            {{-- <div class="form-group row">
                 <label class="col-sm-2 col-form-label"> Xe thuê đi kèm:</label>
                 <div class="col-sm-10">
                     <input name="price_car" type="text" readonly class="form-control-plaintext"
                         value="{{ $dataOderCreate['price_car'] }}">
                 </div>
-            </div>
+            </div> --}}
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label"> <strong>Tổng giá:</strong></label>
                 <div class="col-sm-10">

@@ -5,7 +5,11 @@
 
 @section('content')
 <div class="container-fluid">
-
+  {{-- @error('title') is-invalid @enderror
+  value="{{old('title')}}
+  @error('title')
+    <div class="alert alert-danger">{{ $message }}</div>
+  @enderror --}}
     <!-- Page Heading -->
     @include('admin.partials.content-header',['name'=>'Quản lí loại tour','key'=>'Thêm loại tour'])
     <!-- DataTales Example -->

@@ -13,7 +13,7 @@ class BlogRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,24 @@ class BlogRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title'=>'required',
+            'content'=>'required',
+            'category_blog_id'=>'required',
+            'feature_image_path'=>'required',
+            'description'=>'required|max:191'
+
+        ];
+    }
+    
+    public function messages()
+    {
+        return [
+            'title.required'=>'Tiêu đề không được để trống',
+            'content.required'=>'Nội dung không được để trống',
+            'category_blog_id.required'=>'Danh mục không được để trống',
+            'feature_image_path.required'=>'Hình ảnh không được để trống',
+            'description.required'=>'Mô tả không được để trống',
+            'description.max'=>' Mô tả Không được quá 191 từ'
         ];
     }
 }

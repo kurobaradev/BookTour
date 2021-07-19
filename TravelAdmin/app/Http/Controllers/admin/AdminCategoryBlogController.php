@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Components\Secusive;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BlogRequest;
+use App\Http\Requests\CategoryBlogRequest;
 use App\Models\CategoryBlogs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -34,7 +36,7 @@ class AdminCategoryBlogController extends Controller
         $htmlOption = $this->getCategoryBlog($parentId = '');
         return view('admin.pages.categoryblog.add', compact('htmlOption'));
     }
-    public function store(Request $request)
+    public function store(CategoryBlogRequest $request)
     {
         $this->categoryblogs->create([
             'name' => $request->name,

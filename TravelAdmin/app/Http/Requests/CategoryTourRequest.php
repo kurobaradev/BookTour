@@ -24,14 +24,14 @@ class CategoryTourRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:10'
+            'name' => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => 'Ten danh muc khong duoc de trong',
+            'name.required' => 'Tên danh mục không được để trống',
         ];
     }
 }

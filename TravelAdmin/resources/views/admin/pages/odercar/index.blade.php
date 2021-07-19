@@ -25,10 +25,9 @@
                         <tr>
                             <th>ID</th>
                             <th style="max-width: 100px;">Tên Khách hàng</th>
-                            <th>Tên tour</th>
+                            <th>Tên xe</th>
                             <th>Số điện thoại</th>
-                            <th style="max-width: 70px;">Số người lớn</th>
-                            <th style="max-width: 70px;">Số trẻ em</th>
+                            <th style="max-width: 70px;">Email</th>
                             <th>Giá</th>
                             <th style="max-width: 50px;">Hành động</th>
                             <th>Hành động</th>
@@ -36,21 +35,20 @@
                     </thead>
                     <tbody>
                       
-                        @foreach ($oders as $oder)
+                        @foreach ($cars as $car)
                         <tr>
-                            <td>{{$oder->id}}</td>
-                            <td style="max-width: 50px;">{{$oder->user_name}}</td>
-                            <td style="max-width: 200px;">{{$oder->tour_name}}</td>
-                            <td>{{$oder->phone}}</td>
-                            <td style="max-width: 10px;">{{$oder->Nguoilon}}</td>
-                            <td style="max-width: 10px;">{{$oder->treem}}</td>
-                            <td>{{$oder->price}}</td>
+                            <td>{{$car->id}}</td>
+                            <td style="max-width: 50px;">{{$car->user_name}}</td>
+                            <td style="max-width: 200px;">{{$car->car_name}}</td>
+                            <td>{{$car->phone}}</td>
+                            <td>{{$car->user_mail}}</td>
+                            <td>{{$car->price}}</td>
                             <td style="max-width: 140px;">
-                                @if($oder->status==0)
-                                <a class="btn btn-primary" href="{{route('confirmoder.index',['id'=>$oder->id])}}">Xác nhận đơn</a>
+                                @if($car->status==0)
+                                <a class="btn btn-primary" href="{{route('confirmodercar.index',['id'=>$car->id])}}">Xác nhận đơn</a>
                                 @else
                                     Tour đã được xác nhận<br/>
-                                    <a href="{{route('pdftour.pdf',['id'=>$oder->id]) }}" class="">Xuất PDF</a>
+                                    <a href="{{route('pdfcar.pdf',['id'=>$car->id]) }}" class="">Xuất PDF</a>
                                 @endif
                                 
                             </td>

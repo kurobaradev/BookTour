@@ -17,36 +17,52 @@
         <div class="form-group">
           <label >Tiêu đề</label>
           <input  type="text" 
-                  class="form-control"
+                  class="form-control  @error('title') is-invalid @enderror"
                   placeholder="Tiêu đề"
                   name="title"
+                  value="{{old('title')}}"
                   >
         </div>
+          @error('title')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         <div class="form-group">
           <label >Loại tin tức</label>
-          <select class="form-control" name="category_blog_id">
-            <option value="0"></option>
+          <select class="form-control @error('category_blog_id') is-invalid @enderror" name="category_blog_id">
+            <option value=""></option>
             {!! $htmlOption !!}
           </select>
+              @error('category_blog_id')
+              <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
-        <div class="form-group">
+        <div class="form-group ">
           <label >Mô tả</label>
-          <textarea name="description"  class="form-control" rows="5" cols="50"></textarea>
+          <textarea name="description"  class="form-control @error('description') is-invalid @enderror" rows="5" cols="50">{{old('description')}}</textarea>
+            @error('description')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         </div>
         <div class="form-group">
           <label >Hình ảnh</label>
           <input  type="file" 
-            class="form-control-file"
+            class="form-control-file @error('feature_image_path') is-invalid @enderror"
             name="feature_image_path"
+            value="{{old('feature_image_path')}}"
             >
+            @error('feature_image_path')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         </div>
         {{-- <div class="form-group">
           <label >Nhập tag cho tour</label>
           <select  name="tags[]" class="form-control tag_select_choose" multiple="multiple">
           </select>
         </div> --}}
-        <textarea name="content" id="editor1" rows="10" cols="80"></textarea>
-
+        @error('content')
+         <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+        <textarea class="@error('content') is-invalid @enderror" name="content" id="editor1" rows="10" cols="80">{{old('content')}}</textarea>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 

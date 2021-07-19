@@ -9,7 +9,11 @@
 @endsection
 @section('content')
 <div class="container-fluid">
-
+  {{-- @error('title') is-invalid @enderror
+  value="{{old('title')}}
+  @error('title')
+    <div class="alert alert-danger">{{ $message }}</div>
+  @enderror --}}
     <!-- Page Heading -->
     @include('admin.partials.content-header',['name'=>'Quản lí tour','key'=>'Thêm tour'])
     <!-- DataTales Example -->
@@ -18,47 +22,70 @@
         <div class="form-group">
           <label >Tên tour</label>
           <input  type="text" 
-                  class="form-control"
+                  class="form-control @error('name') is-invalid @enderror"
                   placeholder="Tên tour"
                   name="name"
+                  value="{{old('name')}}"
                   >
+          @error('name')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         </div>
         <div class="form-group">
           <label >Mô tả</label>
-          <textarea name="description"  class="form-control" rows="5" cols="50"></textarea>
+          <textarea name="description"  class="form-control @error('description') is-invalid @enderror" rows="5" cols="50">{{old('description')}}</textarea>
+          @error('description')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         </div>
         <div class="form-group">
           <label >Loại tour</label>
-          <select class="form-control" name="category_tour_id">
-            <option value="0"></option>
+          <select class="form-control @error('category_tour_id') is-invalid @enderror" name="category_tour_id">
+            <option value=""></option>
             {!! $htmlOption !!}
           </select>
+          @error('category_tour_id')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         </div>
         <div class="form-group">
           <label >Giá tour</label>
           <input  type="text" 
-                  class="form-control"
+                  class="form-control @error('price') is-invalid @enderror"
                   placeholder="Giá tour"
                   name="price"
+                  value="{{old('price')}}"
                   >
+          @error('price')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         </div>
         <div action="form-group" class="row">
           <div class="col-6">
             <label >Ngày khởi hành</label>
-            <input type="datetime-local" class="form-control" name="departed">
+            <input type="datetime-local" class="form-control @error('departed') is-invalid @enderror" value="{{old('departed')}}" name="departed">
+            @error('departed')
+              <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
           </div>
           <div class="col-6">
             <label >Số ngày</label>
-            <input type="number" class="form-control" name="duration">
+            <input type="number" class="form-control @error('duration') is-invalid @enderror" value="{{old('duration')}}" name="duration">
+            @error('duration')
+              <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
           </div>
         </div>
         <br>
         <div class="form-group">
           <label >Hình ảnh</label>
           <input  type="file" 
-            class="form-control-file"
+            class="form-control-file @error('feature_image_path') is-invalid @enderror"
             name="feature_image_path"
             >
+          @error('feature_image_path')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         </div>
         {{-- <div class="form-group">
           <label >Nhập tag cho tour</label>
@@ -67,7 +94,10 @@
         </div> --}}
         <div class="form-group">
           <label >Nội dung</label>
-            <textarea name="content" id="editor1" rows="10" cols="80"></textarea>
+          <textarea name="content" id="editor1" rows="10" cols="80" class="@error('content') is-invalid @enderror">{{old('content')}}</textarea>
+          @error('content')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror  
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
