@@ -47,7 +47,7 @@ Route::prefix('/')->group(function () {
     Route::get('/loginuser', [ UserController::class,'loginUser'])->name('userlogin.index');
     Route::post('/loginuser', [ UserController::class,'postloginUser'])->name('postloginuser.index');
     Route::get('/registeruser', [ UserUserController::class,'registerUser'])->name('userregister.index');
-    Route::post('/registeruser', [ UserController::class,'postregisterUser']);
+    Route::post('/registeruser', [ UserController::class,'postregisterUser'])->name('postregisterUser.index');
     Route::get('/logoutuser', [ UserController::class,'logout'])->name('user.logout');;
 });
 
