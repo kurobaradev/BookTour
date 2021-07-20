@@ -28,6 +28,7 @@ class AdminOderCarController extends Controller
                 'status' => 1,
             ]
         );
+        session()->flash('success', 'Cập nhật thành công !.');
         return redirect(route('odercar.index'));
     }
     public function pdf($id) 

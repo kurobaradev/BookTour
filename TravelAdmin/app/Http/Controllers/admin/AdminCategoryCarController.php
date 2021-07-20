@@ -42,6 +42,7 @@ class AdminCategoryCarController extends Controller
             'parent_id' => $request->parent_id,
             'slug' => Str::slug($request->name)
         ]);
+        session()->flash('success', 'tạo thành công !.');
         return redirect(route('categorycar.index'));
     }
     public function edit($parent_id)
@@ -59,6 +60,7 @@ class AdminCategoryCarController extends Controller
                 'slug' => Str::slug($request->name)
             ]
         );
+        session()->flash('success', 'Cập nhật thành công !.');
         return redirect(route('categorycar.index'));
     }
     public function delete($id)

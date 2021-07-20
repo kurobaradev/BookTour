@@ -37,6 +37,7 @@ class AdminSliderController extends Controller
             // dd($dataSliderCreate);
             $this->slider->create($dataSliderCreate);
             DB::commit();
+            session()->flash('success', 'Cập nhật thành công !.');
             return redirect(route('slider.index'));
         } catch (\Exception $exception) {
             DB::rollBack();
@@ -46,6 +47,7 @@ class AdminSliderController extends Controller
     public function delete($id)
     {
         $this->slider->find($id)->delete();
+        session()->flash('success', 'Xóa thành công !.');
         return redirect()->route('slider.index');
     }
 }

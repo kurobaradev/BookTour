@@ -2,7 +2,11 @@
 @section('content')
 
     <div class="mx-auto text-center mt-5" style="width: 300px;">
-
+ {{-- @error('title') is-invalid @enderror
+  value="{{old('title')}}
+  @error('title')
+    <div class="alert alert-danger">{{ $message }}</div>
+  @enderror --}}
         <form class="form-horizontal" role="form" method="POST" action="{{ route('postregisterUser.index') }}">
             @csrf
 
@@ -10,9 +14,10 @@
                 <label for="name" class="col-md-6 control-label">Name</label>
 
                 <div class="col-md-12">
-                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required
-                        autofocus>
-
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autofocus>
+                    @error('name')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
 
                 </div>
             </div>
@@ -20,8 +25,11 @@
                 <label for="address" class="col-md-6 control-label">address</label>
 
                 <div class="col-md-12">
-                    <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}"
+                    <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}"
                         required autofocus>
+                    @error('address')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
 
                 
                 </div>
@@ -30,9 +38,11 @@
                 <label for="phone" class="col-md-6 control-label">Phone</label>
 
                 <div class="col-md-12">
-                    <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}" required
+                    <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required
                         autofocus>
-
+                        @error('phone')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
               
                 </div>
             </div>
@@ -40,8 +50,10 @@
                 <label for="email" class="col-md-6 control-label">E-Mail Address</label>
 
                 <div class="col-md-12">
-                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required>
+                    @error('email')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                 </div>
             </div>
 
@@ -49,8 +61,10 @@
                 <label for="password" class="col-md-6 control-label">Password</label>
 
                 <div class="col-md-12">
-                    <input id="password" type="password" class="form-control" name="password" required>
-
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required>
+                    @error('password')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                 </div>
             </div>
 

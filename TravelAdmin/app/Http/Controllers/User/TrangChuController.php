@@ -13,6 +13,7 @@ use App\Models\oder;
 use App\Models\Oder_Car;
 use App\Models\Slider;
 use App\Models\Tour;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -75,12 +76,26 @@ class TrangChuController extends Controller
             $tour = oder::where('user_id', $user->id)->get();
             $tourwat = oder::where('status', 0)->where('user_id', $user->id)->get();
             $tourconfirm = oder::where('status', 1)->where('user_id', $user->id)->get();
+            $carwat = Oder_Car::where('status', 0)->where('user_id', $user->id)->get();
+            $carconfirm = Oder_Car::where('status', 1)->where('user_id', $user->id)->get();
             // return redirect(route('thongtincanhan.index'));
-            return view('user.pages.user', compact('categoryCar', 'categoryTour', 'tour', 'user', 'tourwat', 'tourconfirm'));
+            return view('user.pages.user', compact('categoryCar', 'categoryTour', 'tour', 'user', 'tourwat', 'tourconfirm','carwat', 'carconfirm'));
         }
         return view('user.pages.loginUser', compact('categoryCar', 'categoryTour'));
     }
-   
+   public function updateprofile(Request $request)
+   {
+       $id = Auth::user()->id;
+            User::find($id)->update([
+                'name' => $request->name,
+                'email' => Auth::user()->email,
+                'address' => $request->address,
+                'phone' => $request->phone,
+            ]);
+        session()->flash('success', 'Cập nhật thành công !.');
+        return redirect(route('thongtincanhan.index'));
+    
+   }
     public function searchcar()
     {
         $search_text= $_GET['search_car'];
@@ -148,6 +163,7 @@ class TrangChuController extends Controller
         ]);
         Mail::to(Auth::user()->email)->send(new OderCar($dataOdercarCreate));
         $dataOdercarCreate->save();
+        session()->flash('success', 'Đặt xe thành công !.');
         return redirect(route('thongtincanhan.index'));
     }
 }

@@ -8,7 +8,18 @@
 
     <!-- Content Row -->
     <div class="row">
-        
+        @if(session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ session()->get('success') }}
+        </div>
+      @endif
+      @if(session()->has('fail'))
+        <div class="alert alert-danger alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ session()->get('fail') }}
+        </div>
+      @endif
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">

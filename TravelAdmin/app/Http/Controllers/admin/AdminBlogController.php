@@ -62,6 +62,7 @@ class AdminBlogController extends Controller
             // dd($dataBlogCreate);
             $this->blogs->create($dataBlogCreate);
             DB::commit();
+            session()->flash('success', 'tạo thành công !.');
             return redirect(route('blog.index'));
         } catch (\Exception $exception) {
             DB::rollBack();
@@ -98,6 +99,7 @@ class AdminBlogController extends Controller
             $this->blogs->find($id)->update($dataBlogUpdate);
             $blogs = $this->blogs->find($id);
             DB::commit();
+            session()->flash('success', 'Cập nhật thành công !.');
             return redirect(route('blog.index'));
         } catch (\Exception $exception) {
             DB::rollBack();

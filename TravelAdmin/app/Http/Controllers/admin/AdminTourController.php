@@ -63,6 +63,7 @@ class AdminTourController extends Controller
             // dd($dataTourCreate);
             $this->tour->create($dataTourCreate);
             DB::commit();
+            session()->flash('success', 'Tạo thành công !.');
             return redirect(route('tour.index'));
         } catch (\Exception $exception) {
             DB::rollBack();
@@ -101,6 +102,7 @@ class AdminTourController extends Controller
             $this->tour->find($id)->update($dataTourUpdate);
             $tour = $this->tour->find($id);
             DB::commit();
+            session()->flash('success', 'Cập nhật thành công !.');
             return redirect(route('tour.index'));
         } catch (\Exception $exception) {
             DB::rollBack();

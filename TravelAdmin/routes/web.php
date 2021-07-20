@@ -41,6 +41,7 @@ Route::prefix('/')->group(function () {
     Route::get('/registrationUser', [ TrangChuController::class,'registrationUser'])->name('registrationUser.index');
     Route::get('/confirmEmail', [ TrangChuController::class,'confirmEmail'])->name('confirmEmail.index'); 
     Route::get('/user', [ TrangChuController::class,'user'])->name('thongtincanhan.index');  
+    Route::post('/user', [ TrangChuController::class,'updateprofile'])->name('update.profile');  
     Route::get('/book-car/{id}', [ TrangChuController::class,'bookcar'])->name('bookcar.index');
     Route::post('/paycar/add', [TrangChuController::class,'payaddcar'])->name('thanhtoanxe.index');
     Route::post('/paycar/payconfirm', [TrangChuController::class,'payconfirmcar'])->name('payconfirmcar.index');

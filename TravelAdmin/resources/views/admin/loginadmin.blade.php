@@ -25,6 +25,18 @@
 </style>
 <body>
     <div id="login">
+        @if(session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ session()->get('success') }}
+        </div>
+        @endif
+        @if(session()->has('fail'))
+            <div class="alert alert-danger alert-dismissible fade show">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ session()->get('fail') }}
+            </div>
+        @endif
         <h3 class="text-center text-white pt-5">Login admin</h3>
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">

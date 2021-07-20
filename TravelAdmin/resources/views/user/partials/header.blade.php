@@ -86,8 +86,9 @@
                     <a href="{{route('user.logout')}}" type="button" class="btn btn-outline-dark">Logout</a>
                 </div>
             @else
-                <button type="button" class="btn btn-outline-dark me-2">Login</button>
-                <button type="button" class="btn btn-outline-dark">Sign-up</button>
+                <a href="{{ route('userlogin.index') }}" type="button" class="btn btn-outline-dark me-2">Đăng nhập</a>
+                <a href="{{ route('userregister.index') }}" type="button" class="btn btn-outline-dark me-2">Đăng kí</a>
+                {{-- <button type="button" class="btn btn-outline-dark">Sign-up</button> --}}
             @endif
 
         </div>
