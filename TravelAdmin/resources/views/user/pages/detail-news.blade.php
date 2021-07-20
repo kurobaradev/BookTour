@@ -1,6 +1,7 @@
 @extends('user.layouts.index')
 @section('content')
-
+    {{-- slider --}}
+    @include('user.pages.components.home.slider')
 
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
@@ -9,7 +10,7 @@
 
         <!-- START THE FEATURETTES -->
 
-        <div class="row g-5 position-relative mt-4 mb-2 p-0">
+        <div class="row g-5 mb-2 p-0">
             <div class="col-md-8">
                 <h3 class=" fst-italic text-warning">
                     {{ $blog->title }}
@@ -24,10 +25,11 @@
                 <br />
                 <i>{{ $blog->description }} </i>
 
-                {{-- <img src="{{$blog->feature_image_path}}" class="rounded-start" style="width: 100%;"/> --}}
+               <div class=" content">
                 @php
                     echo $blog->content;
                 @endphp
+                </div>
             </div>
 
             <div class="col-md-4">
@@ -43,7 +45,6 @@
                             id="tin">{{ $blogRamdom->title }}</a>
                     @endforeach
                     <a href="#" class="col-5 text-warning mt-2"> Xem thêm >>></a>
-
                 </div>
             </div>
         </div>
@@ -64,6 +65,8 @@
             color: orange;
             border-left: solid 2px orange;
         }
-
+        .content img{
+            max-width: 800px;
+        }
     </style>
 @endsection

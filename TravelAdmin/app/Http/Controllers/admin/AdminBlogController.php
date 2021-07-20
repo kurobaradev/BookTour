@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Components\Secusive;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BlogRequest;
 use App\Models\Blogs;
 use App\Models\CategoryBlogs;
 use App\Traits\StorageImageTrait;
@@ -40,7 +41,7 @@ class AdminBlogController extends Controller
         $htmlOption = $this->getCategoryBlog($parentId = '');
         return view('admin.pages.blog.add', compact('htmlOption'));
     }
-    public function store(Request $request)
+    public function store(BlogRequest $request)
     {
         // $path = $request->file('feature_image_path')->storeAs('tour');
         try {
@@ -61,6 +62,7 @@ class AdminBlogController extends Controller
             // dd($dataBlogCreate);
             $this->blogs->create($dataBlogCreate);
             DB::commit();
+            session()->flash('success', 'tạo thành công !.');
             return redirect(route('blog.index'));
         } catch (\Exception $exception) {
             DB::rollBack();
@@ -97,6 +99,7 @@ class AdminBlogController extends Controller
             $this->blogs->find($id)->update($dataBlogUpdate);
             $blogs = $this->blogs->find($id);
             DB::commit();
+            session()->flash('success', 'Cập nhật thành công !.');
             return redirect(route('blog.index'));
         } catch (\Exception $exception) {
             DB::rollBack();

@@ -24,7 +24,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => 'admin',
-            'email' =>'admin@gmail.com',
+            'email' =>'admin2@gmail.com',
             'password' => bcrypt("123456789"), // 123456789,
         ];
     }

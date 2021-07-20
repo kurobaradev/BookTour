@@ -18,36 +18,58 @@
         <div class="form-group">
           <label >Tên xe</label>
           <input  type="text" 
-                  class="form-control"
+                  class="form-control @error('name') is-invalid @enderror"
                   placeholder="Tên xe"
                   name="name"
+                  value="{{old('name')}}"
                   >
+          @error('name')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         </div>
+        {{-- @error('title') is-invalid @enderror
+        value="{{old('title')}}
+        @error('title')
+          <div class="alert alert-danger">{{ $message }}</div>
+        @enderror --}}
         <div class="form-group">
           <label >Loại xe</label>
-          <select class="form-control" name="category_car_id">
-            <option value="0"></option>
+          <select class="form-control @error('category_car_id') is-invalid @enderror" name="category_car_id">
+            <option value=""></option>
             {!! $htmlOption !!}
           </select>
+          @error('category_car_id')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         </div>
         <div class="form-group">
           <label >Mô tả</label>
-          <textarea name="description"  class="form-control" rows="5" cols="50"></textarea>
+          <textarea name="description"  class="form-control @error('description') is-invalid @enderror" rows="5" cols="50"> {{old('description')}}</textarea>
+          @error('description')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         </div>
         <div class="form-group">
           <label >Giá xe</label>
           <input  type="text" 
-                  class="form-control"
+                  class="form-control @error('price') is-invalid @enderror"
                   placeholder="Giá xe"
                   name="price"
+                  value="{{old('price')}}"
                   >
+          @error('price')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         </div>
         <div class="form-group">
           <label >Hình ảnh</label>
           <input  type="file" 
-            class="form-control-file"
+            class="form-control-file @error('feature_image_path') is-invalid @enderror"
             name="feature_image_path"
             >
+          @error('feature_image_path')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
         </div>
         {{-- <div class="form-group">
           <label >Nhập tag cho tour</label>
@@ -55,7 +77,10 @@
           </select>
         </div> --}}
         {{-- <textarea name="content" class="form-control tinymce_editor_init"></textarea> --}}
-        <textarea name="content" id="editor1" rows="10" cols="80"></textarea>
+          @error('content')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
+        <textarea name="content" id="editor1" rows="10" cols="80" class="@error('content') is-invalid @enderror">{{old('content')}}</textarea>
 
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

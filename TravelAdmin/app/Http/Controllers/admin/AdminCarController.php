@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Components\Secusive;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CarRequest;
 use App\Models\Cars;
 use App\Models\CategoryCars;
 use App\Traits\StorageImageTrait;
@@ -39,7 +40,7 @@ class AdminCarController extends Controller
         $htmlOption = $this->getCategoryCar($parentId = '');
         return view('admin.pages.car.add', compact('htmlOption'));
     }
-    public function store(Request $request)
+    public function store(CarRequest $request)
     {
         // $path = $request->file('feature_image_path')->storeAs('tour');
         try {
@@ -61,6 +62,7 @@ class AdminCarController extends Controller
             // dd($dataCarCreate);
             $this->cars->create($dataCarCreate);
             DB::commit();
+            session()->flash('success', 'tạo thành công !.');
             return redirect(route('car.index'));
         } catch (\Exception $exception) {
             DB::rollBack();
@@ -98,6 +100,7 @@ class AdminCarController extends Controller
             $this->cars->find($id)->update($dataCarUpdate);
             $cars = $this->cars->find($id);
             DB::commit();
+            session()->flash('success', 'Cập nhật thành công !.');
             return redirect(route('car.index'));
         } catch (\Exception $exception) {
             DB::rollBack();

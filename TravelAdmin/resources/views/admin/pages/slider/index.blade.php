@@ -16,6 +16,18 @@
 
     <!-- Page Heading -->
     @include('admin.partials.content-header',['name'=>'Quản lí slider','key'=>'Chỉnh sửa'])
+    @if(session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ session()->get('success') }}
+        </div>
+    @endif
+    @if(session()->has('fail'))
+        <div class="alert alert-danger alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ session()->get('fail') }}
+        </div>
+    @endif
     <!-- DataTales Example -->
     <div class="col-12 row">
         <form action="{{route('slider.store')}}" method="POST" enctype="multipart/form-data" class=" col-12">

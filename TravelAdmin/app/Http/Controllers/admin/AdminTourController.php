@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Components\Secusive;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TourRequest;
 use App\Models\CategoriesTour;
 use App\Models\Tour;
 use App\Traits\StorageImageTrait;
@@ -39,7 +40,7 @@ class AdminTourController extends Controller
         $htmlOption = $this->getCategoriesTour($parentId = '');
         return view('admin.pages.tour.add', compact('htmlOption'));
     }
-    public function store(Request $request)
+    public function store(TourRequest $request)
     {
         // $path = $request->file('feature_image_path')->storeAs('tour');
         try {
@@ -62,6 +63,7 @@ class AdminTourController extends Controller
             // dd($dataTourCreate);
             $this->tour->create($dataTourCreate);
             DB::commit();
+            session()->flash('success', 'Tạo thành công !.');
             return redirect(route('tour.index'));
         } catch (\Exception $exception) {
             DB::rollBack();
@@ -100,6 +102,7 @@ class AdminTourController extends Controller
             $this->tour->find($id)->update($dataTourUpdate);
             $tour = $this->tour->find($id);
             DB::commit();
+            session()->flash('success', 'Cập nhật thành công !.');
             return redirect(route('tour.index'));
         } catch (\Exception $exception) {
             DB::rollBack();

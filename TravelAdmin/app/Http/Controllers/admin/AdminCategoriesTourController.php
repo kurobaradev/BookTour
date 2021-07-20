@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Components\Secusive;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoryTourRequest;
 use App\Models\CategoriesTour;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
@@ -34,13 +35,14 @@ class AdminCategoriesTourController extends Controller
         $htmlOption = $this->getCategoriesTour($parentId = '');
         return view('admin.pages.categoriestour.add', compact('htmlOption'));
     }
-    public function store(Request $request)
+    public function store(CategoryTourRequest $request)
     {
         $this->categoriestour->create([
             'name' => $request->name,
             'parent_id' => $request->parent_id,
             'slug' => Str::slug($request->name)
         ]);
+        session()->flash('success', 'tạo thành công !.');
         return redirect(route('categoriestour.index'));
     }
     public function edit($parent_id)
@@ -58,6 +60,7 @@ class AdminCategoriesTourController extends Controller
                 'slug' => Str::slug($request->name)
             ]
         );
+        session()->flash('success', 'Cập nhật thành công !.');
         return redirect(route('categoriestour.index'));
     }
     public function delete($id)

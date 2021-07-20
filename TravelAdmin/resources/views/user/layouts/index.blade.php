@@ -11,7 +11,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
     <!-- Bootstrap core CSS -->
-    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    {{-- <link href="{{assets/dist/css/bootstrap.min.css}}" rel="stylesheet"> --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
@@ -25,8 +25,13 @@
     <!-- fontawesome.com -->
     <script src="https://kit.fontawesome.com/3d60f2faba.js" crossorigin="anonymous"></script>
     <!-- Date -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="{{ asset('vendors/use/css/datepicker.css') }}" rel="stylesheet" />
     @yield('css')
+    @yield('js')
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -41,7 +46,24 @@
                 font-size: 3.5rem;
             }
         }
-
+        .hoverimg {
+            overflow: hidden;
+        }
+        .hoverimg:hover img{
+            transform: scale(1.2);
+        }
+        .text-over2 h5 a{
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .text-over3 p a{
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
     </style>
     <style type="text/css">
         /* ============ desktop view ============ */

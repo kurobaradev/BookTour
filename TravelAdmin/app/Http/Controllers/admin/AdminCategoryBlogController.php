@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Components\Secusive;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BlogRequest;
+use App\Http\Requests\CategoryBlogRequest;
 use App\Models\CategoryBlogs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -34,14 +36,15 @@ class AdminCategoryBlogController extends Controller
         $htmlOption = $this->getCategoryBlog($parentId = '');
         return view('admin.pages.categoryblog.add', compact('htmlOption'));
     }
-    public function store(Request $request)
+    public function store(CategoryBlogRequest $request)
     {
         $this->categoryblogs->create([
             'name' => $request->name,
             'parent_id' => $request->parent_id,
             'slug' => Str::slug($request->name)
         ]);
-        return redirect(route('categorycar.index'));
+        session()->flash('success', 'tạo thành công !.');
+        return redirect(route('categoryblog.index'));
     }
     public function edit($parent_id)
     {
@@ -58,6 +61,7 @@ class AdminCategoryBlogController extends Controller
                 'slug' => Str::slug($request->name)
             ]
         );
+        session()->flash('success', 'Cập nhật thành công !.');
         return redirect(route('categoryblog.index'));
     }
     public function delete($id)

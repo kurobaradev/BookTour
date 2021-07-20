@@ -71,17 +71,40 @@
                     <input type="number" class="form-control" id="staticEmail" name="treem">
                 </div>
             </div>
-            <div class=" form-group col-12">
+            {{-- <div class=" form-group col-12">
                 <label for="inputAddress" class="form-label">Dịch vụ thuê xe đi kèm</label>
-                <select class="form-control" name="price_car">
-                    <option value="0">Không thuê</option>
-                    @foreach ($car as $car)
-                        <option value="{{ $car->price }}">{{ $car->name }} | <i>Đơn giá {{ $car->price }}</i>
-                        </option>
+                <input class="form-check-input" type="checkbox" id="show" name="vehicle1" value="Bike">
+                <label class="form-check-label" for="flexCheckIndeterminate">Thuê xe đi kèm</label>
 
+                <div class="menu" style="display: none;">
+                    <div>
+                        <!--dropdown list options-->
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option selected>Open this select menu</option>
+                            @foreach ($categoryCar as $item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                             @endforeach
+
+
+                        </select>
+                            
+                    </div>
+                    <!--divs that hide and show-->
+                    @foreach ($categoryCar as $item)
+                    <div class="{{$item->id}} box">
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label">
+                            {{optional($item->cars)->name}}
+                        </label>
+                        </div>
+
+                    </div>
                     @endforeach
-                </select>
-            </div>
+
+
+                </div>
+            </div> --}}
             <div class="col-12">
                 <button type="submit" class="btn btn-lg btn-primary">Đặt tour</button>
                 {{-- <button type="submit" class="btn btn-lg btn-primary">Hủy đặt tour</button> --}}
@@ -90,4 +113,34 @@
 
         </form>
     </div>
+
+
+    
+@endsection
+@section('js')
+<script src=
+        "https://code.jquery.com/jquery-1.12.4.min.js">
+    </script>
+    <script>
+        // jQuery functions to hide and show the div
+        $(document).ready(function () {
+            $("select").change(function () {
+                $(this).find("option:selected")
+                       .each(function () {
+                    var optionValue = $(this).attr("value");
+                    if (optionValue) {
+                        $(".box").not("." + optionValue).hide();
+                        $("." + optionValue).show();
+                    } else {
+                        $(".box").hide();
+                    }
+                });
+            }).change();
+        });
+        $(document).ready(function(){
+    $('#show').click(function() {
+      $('.menu').toggle("slide");
+    });
+});
+    </script>
 @endsection

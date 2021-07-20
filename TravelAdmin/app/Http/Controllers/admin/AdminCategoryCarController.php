@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Components\Secusive;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CarRequest;
 use App\Models\CategoryCars;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -34,13 +35,14 @@ class AdminCategoryCarController extends Controller
         $htmlOption = $this->getCategoryCar($parentId = '');
         return view('admin.pages.categorycar.add', compact('htmlOption'));
     }
-    public function store(Request $request)
+    public function store(CarRequest $request)
     {
         $this->categorycars->create([
             'name' => $request->name,
             'parent_id' => $request->parent_id,
             'slug' => Str::slug($request->name)
         ]);
+        session()->flash('success', 'tạo thành công !.');
         return redirect(route('categorycar.index'));
     }
     public function edit($parent_id)
@@ -58,6 +60,7 @@ class AdminCategoryCarController extends Controller
                 'slug' => Str::slug($request->name)
             ]
         );
+        session()->flash('success', 'Cập nhật thành công !.');
         return redirect(route('categorycar.index'));
     }
     public function delete($id)
