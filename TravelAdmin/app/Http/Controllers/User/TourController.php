@@ -104,6 +104,7 @@ class TourController extends Controller
         ]);
         Mail::to(Auth::user()->email)->send(new Mailodertour($dataOderCreate));
         $dataOderCreate->save();
+        session()->flash('success', 'Đặt tour thành công !.');
         return redirect(route('thongtincanhan.index'));
     }
     

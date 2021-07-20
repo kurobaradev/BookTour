@@ -22,7 +22,18 @@
       @csrf
       <a class="navbar-brand text-warning" href="#"><i class="fas fa-6x fa-spa"></i></a>
       <h1 class="h3 mb-3 fw-normal text-dark">Please sign in</h1>
-
+      @if(session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ session()->get('success') }}
+        </div>
+      @endif
+      @if(session()->has('fail'))
+        <div class="alert alert-danger alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ session()->get('fail') }}
+        </div>
+      @endif
       <div class="form-group row">
         <label for="username" class="text-info col-3">Email:</label><br>
         <input type="text" name="email" id="username" class="form-control">

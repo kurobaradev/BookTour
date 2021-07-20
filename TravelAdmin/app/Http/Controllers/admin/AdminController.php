@@ -23,13 +23,19 @@ class AdminController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ], $remember)) {
-            return redirect(route('admin.dashboard'));
+        return redirect(route('admin.dashboard'));
+        }
+        else{
+
+        session()->flash('fail', 'Tài khoảng hoặc mật khẩu sai!.');
+        return view('admin.loginadmin');
         }
     }
 
     public function logout(Request $request)
     {
         Auth::logout();
+        session()->flash('fail', 'Vui lòng đăng nhập để tiếp tục!.');
         return redirect(route('adminlogin.index'));
     }
 }

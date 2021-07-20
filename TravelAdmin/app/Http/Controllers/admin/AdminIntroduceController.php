@@ -32,6 +32,7 @@ class AdminIntroduceController extends Controller
             $this->introduce->find($id)->update($dataIntroduceUpdate);
             $introduce = $this->introduce->find($id);
             DB::commit();
+            session()->flash('success', 'Cập nhật thành công !.');
             return redirect(route('introduce.index'));
         } catch (\Exception $exception) {
             DB::rollBack();

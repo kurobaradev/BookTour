@@ -62,6 +62,7 @@ class AdminCarController extends Controller
             // dd($dataCarCreate);
             $this->cars->create($dataCarCreate);
             DB::commit();
+            session()->flash('success', 'tạo thành công !.');
             return redirect(route('car.index'));
         } catch (\Exception $exception) {
             DB::rollBack();
@@ -99,6 +100,7 @@ class AdminCarController extends Controller
             $this->cars->find($id)->update($dataCarUpdate);
             $cars = $this->cars->find($id);
             DB::commit();
+            session()->flash('success', 'Cập nhật thành công !.');
             return redirect(route('car.index'));
         } catch (\Exception $exception) {
             DB::rollBack();

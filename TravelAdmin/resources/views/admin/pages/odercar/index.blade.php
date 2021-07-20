@@ -16,6 +16,18 @@
 
     <!-- Page Heading -->
     @include('admin.partials.content-header',['name'=>'Quản lí oder','key'=>'Danh sách'])
+    @if(session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ session()->get('success') }}
+        </div>
+    @endif
+    @if(session()->has('fail'))
+        <div class="alert alert-danger alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ session()->get('fail') }}
+        </div>
+    @endif
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">

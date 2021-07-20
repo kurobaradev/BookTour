@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterRequest;
 use App\Models\CategoriesTour;
 use App\Models\CategoryCars;
 use App\Models\User;
@@ -27,9 +28,14 @@ class UserController extends Controller
         $remember = $request->has('remember_me') ? true : false;
         if (Auth::attempt([
             'email' => $request->email,
-            'password' => $request->password
+            'password' => $request->password 
         ], $remember)) {
+            session()->flash('success', 'Đăng nhập thành công !.');
             return redirect(route('thongtincanhan.index'));
+        }
+        else{
+            session()->flash('fail', 'Tài khoản hoặc mật khẩu sai !.');
+            return redirect(route('userlogin.index'));
         }
     }
 
@@ -53,7 +59,7 @@ class UserController extends Controller
         return view('user.pages.registrationUser', compact('categoryCar', 'categoryTour'));
     }
     
-    public function postregisterUser(Request $request)
+    public function postregisterUser(RegisterRequest $request)
     {
         User::create([
             'name' => $request->name,
@@ -62,6 +68,7 @@ class UserController extends Controller
             'phone'=>$request->phone,
             'password' => bcrypt($request->password)
         ]);
+        session()->flash('success', 'Đăng kí thành công !.');
         return redirect(route('userlogin.index'));
     }
 }
