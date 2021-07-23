@@ -11,8 +11,8 @@
         <h3 class="pb-4 mb-4 fst-italic text-warning p-2 bd-highlight">  {{$categoryname->name}} </h3>
       </div>
       <div class="col-12 g-3 text-dark row">
+        @foreach($tour as $tour)
         <div class="col-4">
-            @foreach($tour as $tour)
           <div class="card ">
             <img class="card-img-top" src="{{ $tour->feature_image_path }}" alt="Card image cap" style="width: 100%; height: 200px;">
             <div class="card-body">
@@ -29,8 +29,8 @@
               <small class="text-muted"><p> cập nhật lúc</p></small>
             </div>
           </div>
-          @endforeach
         </div>
+         @endforeach
       </div>
     </div><!-- /.row -->
 

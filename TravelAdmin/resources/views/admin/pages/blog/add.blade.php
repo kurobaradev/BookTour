@@ -63,7 +63,7 @@
          <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <textarea class="@error('content') is-invalid @enderror" name="content" id="editor1" rows="10" cols="80">{{old('content')}}</textarea>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Lưu thông tin</button>
       </form>
 
 </div>
