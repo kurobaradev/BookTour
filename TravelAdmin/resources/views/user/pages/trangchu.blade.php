@@ -23,8 +23,8 @@
         @foreach ($tours as $tour)
         <div class=" col-4">
           <div class="card" style="width: 100%; height: 300px;">
-            <a href="{{route('chitiettour.index',['id'=>$tour->id])}}" class="hoverimg"><img src="{{$tour->feature_image_path}}" class="card-img-top" alt="..." style="height:140px"></a>
-            <div class="card-body">
+            <a href="{{route('chitiettour.index',['id'=>$tour->id])}}" class="hoverimg"><img src="{{$tour->feature_image_path}}" class="card-img-top" alt="..." style="height:150px"></a>
+            <div class="card-body" style="height:250px">
               <div class="text-over2">
                 <h5 class="card-title "><a href="{{route('chitiettour.index',['id'=>$tour->id])}}" class="text-decoration-none link-dark "><strong>{{$tour->name}}</strong></a></h5>
               </div>
