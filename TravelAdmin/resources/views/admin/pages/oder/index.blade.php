@@ -56,7 +56,7 @@
                             <td>{{$oder->phone}}</td>
                             <td style="max-width: 10px;">{{$oder->Nguoilon}}</td>
                             <td style="max-width: 10px;">{{$oder->treem}}</td>
-                            <td>{{$oder->price}}</td>
+                            <td>{{number_format($oder->price)}} VND</td>
                             <td style="max-width: 140px;">
                                 @if($oder->status==0)
                                 <a class="btn btn-primary" href="{{route('confirmoder.index',['id'=>$oder->id])}}">Xác nhận đơn</a>
@@ -77,6 +77,7 @@
                 </table>
             </div>
         </div>
+        {{ $oders->links()}}
     </div>
 </div>
 

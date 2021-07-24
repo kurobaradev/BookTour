@@ -29,7 +29,7 @@
                   $t = $item->updated_at;
                   echo date('d-m-Y \L\ú\c H:i', strtotime($t));
               @endphp
-                  <p class=" m-0"><i class="fas fa-money-bill-alt"></i> <strong>Giá:</strong> {{ $item->price }}</p>
+                  <p class=" m-0"><i class="fas fa-money-bill-alt"></i> <strong>Giá:</strong> {{ number_format($item->price) }}VND</p>
                   <a href="{{ route('chitiettour.index', ['id' => $item->id]) }}" class="btn btn-primary">Xem chi tiết</a>
               </div>
             </div>

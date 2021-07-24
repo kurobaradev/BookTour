@@ -22,7 +22,7 @@
               <div class="text-over3">
                 <p class="card-text p-0 m-0"><a href="{{route('chitiettour.index',['id'=>$item->id])}}" class="text-decoration-none text-dark" style="max-width: 100%;">{{$item->description}}</a></p>
               </div>
-              <p class="card-text m-0 p-0"><a href="{{route('chitiettour.index',['id'=>$item->id])}}" class="text-decoration-none text-dark"><i class="fas fa-money-bill-alt"></i><strong> Giá:</strong>{{$item->price}} </a></p>
+              <p class="card-text m-0 p-0"><a href="{{route('chitiettour.index',['id'=>$item->id])}}" class="text-decoration-none text-dark"><i class="fas fa-money-bill-alt"></i><strong> Giá:</strong>{{number_format($item->price)}} VND</a></p>
             </div>
           </div>
         </div>

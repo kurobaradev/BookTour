@@ -39,7 +39,7 @@
                 <label class="col-sm-3 col-form-label"><i class="fas fa-money-bill-alt"></i> <strong>Giá:</strong></label>
                 <div class="col-sm-9">
                     <input type="text" readonly class="form-control-plaintext" name="price_tour"
-                        value="{{ $tour->price }}">
+                        value="{{number_format($tour->price) }}">
                 </div>
             </div>
             <div class="form-group col-md-6 row">

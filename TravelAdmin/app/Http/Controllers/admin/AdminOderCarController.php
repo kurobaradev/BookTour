@@ -18,7 +18,7 @@ class AdminOderCarController extends Controller
     public function index()
     {
       
-        $cars = $this->cars->latest()->get();
+        $cars = $this->cars->latest()->paginate(5);
         return view('admin.pages.odercar.index', compact('cars'));
     }
     public function update($id)
