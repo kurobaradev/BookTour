@@ -35,7 +35,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Tên xe</th>
+                            <th style="width: 200px;">Tên xe</th>
                             <th>Giá</th>
                             <th>Mô tả</th>
                             <th>Loại</th>
@@ -47,7 +47,7 @@
                         @foreach ($cars as $car)
                         <tr>
                             <td>{{$car->name}}</td>
-                            <td>{{$car->price}}</td>
+                            <td>{{number_format($car->price)}} VND</td>
                             <td class="content"><div class="abc">{{$car->description}}</div ></td>
                             <td>{{optional($car->categorycar)->name}}</td>
                             <td>
@@ -77,6 +77,7 @@
             </div>
         </div>
     </div>
+   {{-- {{ $cars->links()}} --}}
 
 </div>
 @endsection

@@ -100,7 +100,7 @@
                                     <td class=" text-truncate" style="max-width: 200px;">{{ $item->tour_name }}</td>
                                     <td>{{ $item->departed }}</td>
                                     <td>{{ $item->duration }}</td>
-                                    <td>{{ $item->price }}</td>
+                                    <td>{{ number_format($item->price) }}VND</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -128,7 +128,7 @@
                                     <td class=" text-truncate" style="max-width: 200px;">{{ $item->car_name }}</td>
                                     <td>{{ $item->departed }}</td>
                                     <td>{{ $item->duration }}</td>
-                                    <td>{{ $item->price }}</td>
+                                    <td>{{ number_format($item->price) }}VND</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -156,7 +156,7 @@
                                     <td class=" text-truncate" style="max-width: 200px;">{{ $item->car_name }}</td>
                                     <td>{{ $item->departed }}</td>
                                     <td>{{ $item->duration }}</td>
-                                    <td>{{ $item->price }}</td>
+                                    <td>{{ number_format($item->price) }}VND</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -184,7 +184,7 @@
                                     <td class=" text-truncate" style="max-width: 200px;">{{ $item->car_name }}</td>
                                     <td>{{ $item->departed }}</td>
                                     <td>{{ $item->duration }}</td>
-                                    <td>{{ $item->price }}</td>
+                                    <td>{{ number_format($item->price) }}VND</td>
                                 </tr>
                             @endforeach
                         </tbody>
