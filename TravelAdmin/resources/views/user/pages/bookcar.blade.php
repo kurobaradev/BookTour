@@ -20,7 +20,7 @@
                 <label class="col-sm-3 col-form-label"><i class="fas fa-money-bill-alt"></i> <strong>Giá:</strong></label>
                 <div class="col-sm-9">
                     <input type="text" readonly class="form-control-plaintext" name="price"
-                        value="{{ $cars->price }}">
+                        value="{{ number_format($cars->price) }}">
                 </div>
             </div>
         </div>

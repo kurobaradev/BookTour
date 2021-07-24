@@ -54,7 +54,7 @@
                             <td style="max-width: 200px;">{{$car->car_name}}</td>
                             <td>{{$car->phone}}</td>
                             <td>{{$car->user_mail}}</td>
-                            <td>{{$car->price}}</td>
+                            <td>{{number_format($car->price)}} VND</td>
                             <td style="max-width: 140px;">
                                 @if($car->status==0)
                                 <a class="btn btn-primary" href="{{route('confirmodercar.index',['id'=>$car->id])}}">Xác nhận đơn</a>
@@ -75,6 +75,7 @@
                 </table>
             </div>
         </div>
+        {{ $cars->links()}}
     </div>
 </div>
 

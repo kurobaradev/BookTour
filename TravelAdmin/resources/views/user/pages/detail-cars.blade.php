@@ -33,7 +33,7 @@
                     <div class="p-4 mb-3 bg-light rounded">
                         <h5 class="card-title">{{$cars->name}}</h5>
                         <p class="card-text m-0"> {{$cars->description}}</p>
-                        <p class="card-text m-0"><i class="fas fa-money-bill-alt"></i> <strong>Giá:</strong>{{$cars->price}}</p>
+                        <p class="card-text m-0"><i class="fas fa-money-bill-alt"></i> <strong>Giá:</strong>{{number_format($cars->price)}}VND</p>
                         <a href="{{ route('bookcar.index', ['id' => $cars->id]) }}" type="button" class="btn btn-warning">Đặt xe</a>
                     </div>
                 </div>

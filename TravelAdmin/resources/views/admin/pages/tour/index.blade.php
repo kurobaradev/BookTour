@@ -35,20 +35,20 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Tên tour</th>
-                            <th>Giá</th>
-                            <th>Mô tả</th>
-                            <th>Loại</th>
-                            <th>Ngày khởi hành</th>
-                            <th>Thời gian tour</th>
-                            <th>Tác vụ</th>
+                            <th style="width: 250px;">Tên tour</th>
+                            <th style="width: 140px;">Giá</th>
+                            <th style="width: 150px;">Mô tả</th>
+                            <th style="width: 100px;">Loại</th>
+                            <th >Ngày khởi hành</th>
+                            <th style="width: 60px;">Thời gian tour</th>
+                            <th style="width: 150px;">Tác vụ</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($tours as $tour)
                         <tr>
                             <td>{{$tour->name}}</td>
-                            <td>{{$tour->price}}</td>
+                            <td>{{number_format($tour->price)}} VND</td>
                             <td class="content"><div class="abc"> <?php echo "$tour->description"?></div></td>
                             <td>{{optional($tour->categorytour)->name}}</td>
                             <td><?php               

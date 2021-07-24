@@ -54,7 +54,7 @@
         </div> --}}
         <textarea name="content" id="editor1" rows="10" cols="80">{{$blogs->content}}</textarea>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Lưu thông tin</button>
       </form>
 
 </div>

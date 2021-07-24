@@ -23,15 +23,15 @@
         @foreach ($tours as $tour)
         <div class=" col-4">
           <div class="card" style="width: 100%; height: 300px;">
-            <a href="{{route('chitiettour.index',['id'=>$tour->id])}}" class="hoverimg"><img src="{{$tour->feature_image_path}}" class="card-img-top" alt="..." style="height:140px"></a>
-            <div class="card-body">
+            <a href="{{route('chitiettour.index',['id'=>$tour->id])}}" class="hoverimg"><img src="{{$tour->feature_image_path}}" class="card-img-top" alt="..." style="height:150px"></a>
+            <div class="card-body" style="height:250px">
               <div class="text-over2">
                 <h5 class="card-title "><a href="{{route('chitiettour.index',['id'=>$tour->id])}}" class="text-decoration-none link-dark "><strong>{{$tour->name}}</strong></a></h5>
               </div>
               <div class="text-over3">
                 <p class="card-text p-0 m-0"><a href="{{route('chitiettour.index',['id'=>$tour->id])}}" class="text-decoration-none text-dark" style="max-width: 100%;">{{$tour->description}}</a></p>
               </div>
-              <p class="card-text m-0 p-0"><a href="{{route('chitiettour.index',['id'=>$tour->id])}}" class="text-decoration-none text-dark"><i class="fas fa-money-bill-alt"></i><strong> Giá:</strong>{{$tour->price}} </a></p>
+              <p class="card-text m-0 p-0"><a href="{{route('chitiettour.index',['id'=>$tour->id])}}" class="text-decoration-none text-dark"><i class="fas fa-money-bill-alt"></i><strong> Giá:</strong>{{number_format($tour->price)}} </a></p>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@
               <div class="text-over3">
                 <p class="card-text p-0 m-0"><a href="{{route('chitietxe.index',['id'=>$car->id])}}" class="text-decoration-none text-dark" style="max-width: 100%;">{{$car->description}}</a></p>
               </div>
-              <p class="card-text m-0 p-0"><a href="{{route('chitietxe.index',['id'=>$car->id])}}" class="text-decoration-none text-dark"><i class="fas fa-money-bill-alt"></i><strong> Giá:</strong>{{$car->price}} </a></p>
+              <p class="card-text m-0 p-0"><a href="{{route('chitietxe.index',['id'=>$car->id])}}" class="text-decoration-none text-dark"><i class="fas fa-money-bill-alt"></i><strong> Giá:</strong>{{number_format($car->price)}} VND</a></p>
             </div>
           </div>
         </div>

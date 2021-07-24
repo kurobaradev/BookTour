@@ -21,7 +21,7 @@ class AdminOderController extends Controller
     public function index()
     {
       
-        $oders = $this->oders->latest()->get();
+        $oders = $this->oders->latest()->paginate(5);
         return view('admin.pages.oder.index', compact('oders'));
     }
     public function update($id)
